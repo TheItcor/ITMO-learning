@@ -1,4 +1,6 @@
 /.idea/
 /out/
 /Informatics/Informatics.iml
-.gitignore
+/Programming/src/Programming.iml
+/Informatics/src/Informatics.iml
+/.gitignore
