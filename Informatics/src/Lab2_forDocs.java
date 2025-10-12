@@ -1,20 +1,10 @@
 import java.util.Scanner;
 
-/* Написать программу на любом языке программирования, которая на
-вход получает набор из 7 цифр «0» и «1», записанных подряд,
-анализирует это сообщение на основе классического кода Хэмминга (7,4),
-а затем выдает правильное сообщение (только информационные
-биты) и указывает бит с ошибкой при его наличии. */
 
-/* Данный код может обработать 2^31 сообщение из 0 и 1 на основе
-   кода Хэмминга. (Наверное лол) */
-
-class Lab2 {
+class Lab2_forDocs {
 
     static byte[] byteTranlate(String message, int length) {
-        /* Метод переводящий строку в массив байтов
-           сообщение в массиве байтов обрабатывается быстрее,
-           а также экономнее потребляет память */
+        /* Метод переводящий строку в массив байтов */
         byte[] byte_message = new byte[length];
         for (int i = 0; i < length; i++) {
             byte_message[i] = (byte) (message.charAt(i) - '0');
@@ -22,7 +12,6 @@ class Lab2 {
 
         return byte_message;
     }
-
 
     static int findControlPoints(int length){
         /* Метод, находящий количество контрольных битов в сообщении */
@@ -67,8 +56,6 @@ class Lab2 {
         return errorAddress - 1;
     }
 
-
-
     static byte[] repairMessage(byte[] message){
         /* Метод, получающий сообщение с ошибкой.
            !!! Если ошибки нет, будет непредсказуемое поведение
@@ -84,7 +71,6 @@ class Lab2 {
 
         return message;
     }
-
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

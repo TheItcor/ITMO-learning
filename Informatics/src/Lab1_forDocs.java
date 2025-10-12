@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Lab_1 {
+class Lab1_forDocs {
     static int fibonacciNumber(int number) {
         /* Поиск числа фибоначчи по индексу*/
         if (number == 1 || number == 2) return 1;
