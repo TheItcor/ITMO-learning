@@ -20,9 +20,12 @@ class Lab2 {
 
     static int findControlPoints(int length){
         /* Метод, находящий количество контрольных битов в сообщении */
-        int a;
+        int degree = 0;
+        while (Math.pow(2, degree) < length) {
+            degree++;
+        }
 
-        return a;
+        return degree;
     }
 
     public static void main(String[] args) {
