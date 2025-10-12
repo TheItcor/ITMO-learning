@@ -6,6 +6,9 @@ import java.util.Scanner;
 а затем выдает правильное сообщение (только информационные
 биты) и указывает бит с ошибкой при его наличии. */
 
+/* Данный код может обработать 2^31 сообщение из 0 и 1 на основе
+   кода Хэмминга. */
+
 class Lab2 {
 
     static byte[] byteTranlate(String message, int length) {
@@ -31,16 +34,18 @@ class Lab2 {
         return degree;
     }
 
-
-    static boolean isBroken(byte[] message){
-        /* Метод, проверяющий сломано ли сообщение по коду хэмминга */
+    static int findErrorIndex(byte[] message){
+        /* Метод, который находит индекс ошибки и возращает его
+           если ошибки нет, то возращает -1 */
         int controlPoints = findControlPoints(message.length);
+        int errorAddress = 0;
 
         for (int i = 0; i < controlPoints; i++) {
-            // делаем битовый сдвиг для ^2
+            // Побитый сдвиг для возведения в ^2
             int controlBitPosition = (1 << i);
             int sum = 0;
 
+            //отбираем только те биты, которые задаются контрольным битом
             for (int j = 0; j < message.length; j++) {
                 int bitPosition = j + 1;
                 if ((bitPosition & controlBitPosition) != 0) {
@@ -49,17 +54,35 @@ class Lab2 {
             }
 
             if (sum != 0) {
-                return true;
+                errorAddress |= (1 << i);
             }
         }
 
-        return false;
+        // Если ошибки нет - возращаем -1
+        if (errorAddress == 0) {
+            return -1;
+        }
+
+        // Если ошибка есть - возращает её индекс
+        return errorAddress - 1;
     }
 
 
+
     static byte[] repairMessage(byte[] message){
+        /* Метод, получающий сообщение с ошибкой.
+           !!! Если ошибки нет, будет непредсказуемое поведение
+           Возращает исправленное сообщение. */
+        int errorIndex = findErrorIndex(message);
 
+        // Исправляем ошибку - инвертируем бит
+        if (message[errorIndex] == 0) {
+            message[errorIndex] = 1;
+        } else {
+            message[errorIndex] = 0;
+        }
 
+        return message;
     }
 
 
@@ -72,8 +95,10 @@ class Lab2 {
 
 
         //Проверяем есть ли ошибка в сообщении, если да - чиним
-        if (isBroken(byte_message)) {
+        if (findErrorIndex(byte_message) != -1) {
+            System.out.println("Найдена ошибка. Индекс Ошибки: " + findErrorIndex(byte_message) + " (Отсчёт с нуля)");
             byte_message = repairMessage(byte_message);
+            System.out.print("Исправленный код: ");
         }
 
         // Вывод
