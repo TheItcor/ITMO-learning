@@ -9,7 +9,9 @@ import java.util.Scanner;
 class Lab2 {
 
     static byte[] byteTranlate(String message, int length) {
-        /* Метод переводящий строку в массив байтов 0 и 1 */
+        /* Метод переводящий строку в массив байтов
+           сообщение в массиве байтов обрабатывается быстрее,
+           а также экономнее потребляет память */
         byte[] byte_message = new byte[length];
         for (int i = 0; i < length; i++) {
             byte_message[i] = (byte) (message.charAt(i) - '0');
@@ -17,6 +19,7 @@ class Lab2 {
 
         return byte_message;
     }
+
 
     static int findControlPoints(int length){
         /* Метод, находящий количество контрольных битов в сообщении */
@@ -28,20 +31,54 @@ class Lab2 {
         return degree;
     }
 
+
+    static boolean isBroken(byte[] message){
+        /* Метод, проверяющий сломано ли сообщение по коду хэмминга */
+        int controlPoints = findControlPoints(message.length);
+
+        for (int i = 0; i < controlPoints; i++) {
+            // делаем битовый сдвиг для ^2
+            int controlBitPosition = (1 << i);
+            int sum = 0;
+
+            for (int j = 0; j < message.length; j++) {
+                int bitPosition = j + 1;
+                if ((bitPosition & controlBitPosition) != 0) {
+                    sum ^= message[j];
+                }
+            }
+
+            if (sum != 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    static byte[] repairMessage(byte[] message){
+
+
+    }
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String user_message = scanner.nextLine();
 
         // Получаем массив байтов из строки, которую ввёл пользователь
-        byte length = 7; //по условиям задачи длина сообщения 7
-        byte[] byte_message = byteTranlate(user_message, length);
+        byte[] byte_message = byteTranlate(user_message, user_message.length());
 
 
+        //Проверяем есть ли ошибка в сообщении, если да - чиним
+        if (isBroken(byte_message)) {
+            byte_message = repairMessage(byte_message);
+        }
 
-
+        // Вывод
         for (int i = 0; i < 7; i++) {
             System.out.print(byte_message[i]);
         }
-
     }
 }
