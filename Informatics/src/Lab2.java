@@ -102,7 +102,7 @@ class Lab2 {
         }
 
         // Вывод
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < byte_message.length; i++) {
             System.out.print(byte_message[i]);
         }
     }
