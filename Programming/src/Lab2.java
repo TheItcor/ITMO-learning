@@ -29,26 +29,53 @@ class Pokemon {
 
     void sayHello() {
         System.out.println("Hello, i am " + this.name);
-    };
+    }
 
+
+
+
+    static class Messages {
+        static class Messages_en {}
+
+        static class Messages_ru {}
+    }
 }
 
+class Battle{
+    static void startBattle(Pokemon firstPokemon, Pokemon secondPokemon){
+        while (firstPokemon.HP <= 0 || secondPokemon.HP <= 0) {
+            // WIP
+        }
 
-public class Lab2 {
+        if (firstPokemon.HP > secondPokemon.HP ) {
+            System.out.println(firstPokemon.name + "победил!");
+        } else {
+            System.out.println(secondPokemon.name + "победил!");
+        }
+    }
+}
 
+//  Класс для всех атак
+class Move {
+    class DamageMove {}
 
     class PhysicalMove {}
 
     class SpecialMove {}
 
     class StatusMove {}
+}
 
-    class Battle {}
+// Эффект на покемона
+class Effect {}
 
 
+public class Lab2 {
     public static void main(String[] args) {
-        Pokemon testPokemon = new Pokemon();
-        testPokemon.sayHello();
+        Pokemon testPokemon1 = new Pokemon();
+        Pokemon testPokemon2 = new Pokemon();
+        testPokemon1.sayHello();
 
+        //Pokemon.Battle.startBattle(testPokemon1, testPokemon2);
     }
 }
