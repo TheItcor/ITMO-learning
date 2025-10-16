@@ -16,7 +16,7 @@ class Pokemon {
         special_defense = "Fire";
     }
 
-    // Конструктор для покемонов
+    // Полноценный конструктор для покемонов
     Pokemon(String name, int HP, int attack, int defense, int speed, String special_attack, String special_defense) {
         this.name = name;
         this.HP = HP;
@@ -25,6 +25,12 @@ class Pokemon {
         this.speed = speed;
         this.special_attack = special_defense;
         this.special_defense = special_defense;
+    }
+
+    // Упрощенный конструктор для покемонов
+    Pokemon(String name, int attack) {
+        this.name = name;
+        this.attack = attack;
     }
 
     void sayHello() {
@@ -40,20 +46,13 @@ class Messages {
 }
 
 class Battle{
-    static void startBattle(Pokemon firstPokemon, Pokemon secondPokemon){
+    void addAlly(Pokemon pokemonAlly){}
 
+    void addFoe(Pokemon pokemonFoe){}
 
+    void go() {};
 
-
-//        while (firstPokemon.HP <= 0 || secondPokemon.HP <= 0) {
-//            // WIP
-//        }
-//        if (firstPokemon.HP > secondPokemon.HP ) {
-//            System.out.println(firstPokemon.name + "победил!");
-//        } else {
-//            System.out.println(secondPokemon.name + "победил!");
-//        }
-    }
+    Battle() {}
 }
 
 //  Класс для всех атак
@@ -73,10 +72,16 @@ class Effect {}
 
 public class Lab2 {
     public static void main(String[] args) {
-        Pokemon testPokemon1 = new Pokemon();
-        Pokemon testPokemon2 = new Pokemon();
-        testPokemon1.sayHello();
+//        Pokemon testPokemon1 = new Pokemon();
+//        Pokemon testPokemon2 = new Pokemon();
+//        testPokemon1.sayHello();
+//        Pokemon.Battle.startBattle(testPokemon1, testPokemon2);
 
-        //Pokemon.Battle.startBattle(testPokemon1, testPokemon2);
+        Battle b = new Battle();
+        Pokemon p1 = new Pokemon("Чужой", 1);
+        Pokemon p2 = new Pokemon("Хищник", 1);
+        b.addAlly(p1);
+        b.addFoe(p2);
+        b.go();
     }
 }
