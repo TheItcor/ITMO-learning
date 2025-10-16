@@ -31,37 +31,38 @@ class Pokemon {
         System.out.println("Hello, i am " + this.name);
     }
 
+}
 
+class Messages {
+    static class Messages_en {}
 
-
-    static class Messages {
-        static class Messages_en {}
-
-        static class Messages_ru {}
-    }
+    static class Messages_ru {}
 }
 
 class Battle{
     static void startBattle(Pokemon firstPokemon, Pokemon secondPokemon){
-        while (firstPokemon.HP <= 0 || secondPokemon.HP <= 0) {
-            // WIP
-        }
 
-        if (firstPokemon.HP > secondPokemon.HP ) {
-            System.out.println(firstPokemon.name + "победил!");
-        } else {
-            System.out.println(secondPokemon.name + "победил!");
-        }
+
+
+
+//        while (firstPokemon.HP <= 0 || secondPokemon.HP <= 0) {
+//            // WIP
+//        }
+//        if (firstPokemon.HP > secondPokemon.HP ) {
+//            System.out.println(firstPokemon.name + "победил!");
+//        } else {
+//            System.out.println(secondPokemon.name + "победил!");
+//        }
     }
 }
 
 //  Класс для всех атак
 class Move {
-    class DamageMove {}
+    class DamageMove {
+        class PhysicalMove {}
 
-    class PhysicalMove {}
-
-    class SpecialMove {}
+        class SpecialMove {}
+    }
 
     class StatusMove {}
 }
