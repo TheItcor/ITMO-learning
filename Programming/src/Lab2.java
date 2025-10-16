@@ -36,6 +36,7 @@ class Pokemon {
 
 public class Lab2 {
 
+
     class PhysicalMove {}
 
     class SpecialMove {}
