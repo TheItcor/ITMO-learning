@@ -9,11 +9,11 @@ class Pokemon {
     Pokemon() {
         name = "Default_Name";
         HP = 100;
-        attack = 10;
+        attack = 1;
         defense = 10;
         speed = 10;
         special_attack = "Fire";
-        special_defense = "Fire";
+        special_defense = "Ice Shield";
     }
 
     // Полноценный конструктор для покемонов
@@ -27,7 +27,7 @@ class Pokemon {
         this.special_defense = special_defense;
     }
 
-    // Упрощенный конструктор для покемонов
+    // Перегрузка конструктора: упрощенный конструктор для покемонов
     Pokemon(String name, int attack) {
         this.name = name;
         this.attack = attack;
@@ -39,21 +39,27 @@ class Pokemon {
 
 }
 
+
+
 class Messages {
     static class Messages_en {}
 
     static class Messages_ru {}
 }
 
+
+
 class Battle{
     void addAlly(Pokemon pokemonAlly){}
 
     void addFoe(Pokemon pokemonFoe){}
 
-    void go() {};
+    void go() {}
 
     Battle() {}
 }
+
+
 
 //  Класс для всех атак
 class Move {
@@ -68,6 +74,7 @@ class Move {
 
 // Эффект на покемона
 class Effect {}
+
 
 
 public class Lab2 {
