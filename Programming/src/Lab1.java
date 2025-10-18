@@ -49,10 +49,8 @@ class Lab1 {
 
     public static void main(String[] args){
         int[] w = new int[16];
-        int h = 5;
-        for (int i=0; i<16; i++){
-            w[i] = h;
-            h++;
+        for (int i = 0; i < 16; i++) {
+            w[i] = 5 + i;
         }
 
         double[] x = new double[15];
