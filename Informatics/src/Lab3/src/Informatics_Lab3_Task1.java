@@ -12,6 +12,23 @@
 * */
 
 class Informatics_Lab3_Task1 {
+
+    static boolean isPattern575(String text){
+        // Метод, проверяющий подходит ли массив строк по правилу 5 слог, 7 слог, 5 слог
+        int[] pattern575 = {5, 7, 5};
+        String[] fragmentedText = text.split("\\s*/\\s*");
+
+        for (int i = 0; i < 3; i++) {
+            int count = fragmentedText[i].replaceAll("[^аеёиоуыэюяАЕЁИОУЫЭЮЯ]", "").length();
+
+            if (count != pattern575[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     static byte isHaiku(String text) {
         // Метод, который анализирует текст и выдаёт ответ от 0 до 2
         // Вывод: 0 - если текст - хайку
@@ -23,9 +40,9 @@ class Informatics_Lab3_Task1 {
             return 1;
         }
 
-        // Проверка на слоги
-        if (text.matches("")){
-            return 2; // ДОДЕЛАТЬ
+        // Проверка на слоги 5-7-5
+        if (!isPattern575(text)) {
+            return 2;
         }
 
         return 0;
