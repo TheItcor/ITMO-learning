@@ -1,5 +1,5 @@
-// Author = None None None
-// Group = None
+// Author = TheItcor (Itcor)
+// Group = XXXXX
 // Date = 27.10.2025
 
 
@@ -50,13 +50,21 @@ class Informatics_Lab3_Task1 {
 
 
     public static void main(String[] args) {
-        String Test1 = "Вечер за окном. / Еще один день прожит. / Жизнь скоротечна...";
-        String Test2 = "Просто текст";
-        String Test3 = "Как вишня расцвела! / Она с коня согнала / И князя-гордеца.";
+        String test1 = "Вечер за окном. / Еще один день прожит. / Жизнь скоротечна...";
+        String test2 = "Просто текст";
+        String test3 = "Как вишня расцвела! / Она с коня согнала / И князя-гордеца.";
+        String test4 = "Ты человек / Он не человек / Они не люди";
+        String test5 = "/g/";
+        String test6 = "Кто я?";
+        String test7 = "Где /";
+        String test8 = "Знает лишь время, / Сколько дорог мне пройти, / Чтоб достичь счастья.";
 
-        String[] tests = {Test1, Test2, Test3};
 
+        String[] tests = {test1, test2, test3, test4, test5, test6, test7, test8};
+
+        int i = 1;
         for (String test : tests) {
+            System.out.print(i + " ");
             switch (isHaiku(test)) {
                 case 0:
                     System.out.println("Хайку!");
@@ -68,6 +76,8 @@ class Informatics_Lab3_Task1 {
                     System.out.println("Не хайку.");
                     break;
             }
+
+            i++;
         }
     }
 }

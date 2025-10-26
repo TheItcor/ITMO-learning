@@ -1,9 +1,5 @@
-import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-// Author = None None None
-// Group = None
+// Author = TheItcor (Itcor)
+// Group = XXXXX
 // Date = 27.10.2025
 
 /*
@@ -17,7 +13,9 @@ import java.util.regex.Pattern;
 символы.
  */
 
-
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 class Informatics_Lab3_Task2 {
 
