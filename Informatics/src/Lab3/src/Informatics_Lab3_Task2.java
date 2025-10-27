@@ -70,6 +70,15 @@ class Informatics_Lab3_Task2 {
         String test5 = "2 * 2 = 4";
         String test6 = "10 + 11 = 21";
 
+        /*
+        3362 + 10635 = 50640
+        203a * 716b = x
+        124987 - 26987 = 7987
+        1367618 + -12 = 1404915
+        -5 * -5 = 51
+        987 + 1318 = 9248
+         */
+
         String[] tests = {test1, test2, test3, test4, test5, test6};
 
         for (String message : tests) {
