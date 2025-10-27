@@ -65,8 +65,12 @@ class Informatics_Lab3_Task2 {
     public static void main(String[] args) {
         String test1 = "15 + 22 = 37";
         String test2 = "6a * 9b = x";
+        String test3 = "50 - 30 = 20";
+        String test4 = "111 + 1 = 112";
+        String test5 = "2 * 2 = 4";
+        String test6 = "10 + 11 = 21";
 
-        String[] tests = {test1, test2};
+        String[] tests = {test1, test2, test3, test4, test5, test6};
 
         for (String message : tests) {
             ArrayList<Integer> newNumbers = cryptNumbers(getNumbers(message));
