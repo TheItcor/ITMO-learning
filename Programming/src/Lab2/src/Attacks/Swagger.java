@@ -10,7 +10,7 @@ public class Swagger extends PhysicalMove {
 
     @Override
     public String describe() {
-        return "применяет водный импульс";
+        return "применяет свагу";
     }
 
 }

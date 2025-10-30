@@ -10,7 +10,7 @@ public class Facade extends PhysicalMove {
 
     @Override
     public String describe() {
-        return "применяет клевание";
+        return "применяет лицевую атаку";
     }
 
 }

@@ -10,7 +10,7 @@ public class SweetKiss extends PhysicalMove {
 
     @Override
     public String describe() {
-        return "применяет водный импульс";
+        return "применяет сладкий поцелуй";
     }
 
 }

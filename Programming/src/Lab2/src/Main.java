@@ -1,3 +1,4 @@
+import Pokemons.*;
 import ru.ifmo.se.pokemon.*;
 
 // ID: 75475
