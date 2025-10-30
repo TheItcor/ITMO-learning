@@ -1,14 +1,16 @@
+package Attacks;
+
 import ru.ifmo.se.pokemon.PhysicalMove;
 import ru.ifmo.se.pokemon.Type;
 
-public class WaterPulse extends PhysicalMove {
-    public WaterPulse() {
+public class Rest extends PhysicalMove {
+    public Rest() {
         super(Type.PSYCHIC, 90, 1.0, 0, 3);
     }
 
     @Override
     public String describe() {
-        return "применяет водный импульс";
+        return "применяет отдых";
     }
 
 }

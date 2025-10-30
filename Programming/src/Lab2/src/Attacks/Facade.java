@@ -1,8 +1,10 @@
+package Attacks;
+
 import ru.ifmo.se.pokemon.PhysicalMove;
 import ru.ifmo.se.pokemon.Type;
 
-public class Peck extends PhysicalMove {
-    public Peck() {
+public class Facade extends PhysicalMove {
+    public Facade() {
         super(Type.PSYCHIC, 100, 1.0, 0, 3);
     }
 
