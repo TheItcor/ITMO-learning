@@ -2,7 +2,8 @@ import ru.ifmo.se.pokemon.*;
 
 
 
-public class Lab2 {
+
+public class Main {
     public static void main(String[] args) {
         Battle b = new Battle();
         Pokemon p1 = new Pokemon("Чужой", 1);
