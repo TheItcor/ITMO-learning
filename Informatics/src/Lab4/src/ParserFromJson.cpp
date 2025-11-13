@@ -1,19 +1,43 @@
 #include <iostream>
-
+#include <string>
+#include <fstream>
 
 /* TODO
-*  1. Функция1, принимает Имя.Файла, отдаёт весь текст в одну строку без n/ 
-*  2. Функция2, принимает однострочный текст и парсит его
-*  3. Функция3, принимает однострочный текст и записывает
-*
-*
+* [x] 1. Функция1, принимает Имя.Файла, возращает весь текст в одну строку без n/ 
+* [ ] 2. Функция2, принимает однострочный текст и парсит его, делая из него текст бинарника
+* [ ] 3. Функция3, принимает однострочный текст и записывает его в бинарник (Нужна ли функция?)
 */
 
+std::string makeString(std::string fileName) {
+    /*Функция, достаёт из файла текст и возращает всё в одной строке*/
+    std::ifstream in;
+    in.open(fileName);
+    
+    std::string allTxt = "";
+    std::string line;
+    while (std::getline(in, line)) {
+        allTxt += line;
+    }
+
+
+    in.close();
+    return allTxt;
+}
+
+
+std::string makeBin(std::string jsonTxt) {
+    /* */
+    
+
+
+    return;
+}
 
 
 
 int main () {
-    
+    std::string someTxt;
+    someTxt = makeString("lessons.json");
     
     
     

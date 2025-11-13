@@ -4,3 +4,11 @@
 /Programming/src/Programming.iml
 /Informatics/src/Informatics.iml
 /.gitignore
+Informatics/src/Lab4/Lab4.iml
+.gitignore
+
+Programming/src/Lab2/Lab2.iml
+Informatics/src/Lab4/src/temp
+Informatics/src/Lab4/src/a.out
+Informatics/src/Lab3/Lab3.iml
+.gitignore
