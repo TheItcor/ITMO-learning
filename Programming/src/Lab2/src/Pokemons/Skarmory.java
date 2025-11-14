@@ -11,7 +11,7 @@ public class Skarmory extends Pokemon {
     public Skarmory(String name, int level) {
         super(name, level);
         setType(Type.PSYCHIC);
-        setStats(200, 90 ,50, 150, 50, 520);
+        setStats(50, 48 ,43, 46, 41, 60);
         this.addMove(new Peck());
         this.addMove(new DoubleTeam());
         this.addMove(new Confide());

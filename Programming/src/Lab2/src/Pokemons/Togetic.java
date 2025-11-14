@@ -10,7 +10,7 @@ public class Togetic extends Pokemon {
     public Togetic(String name, int level) {
         super(name, level);
         setType(Type.PSYCHIC);
-        setStats(150, 350 ,100, 50, 50, 50);
+        setStats(55, 40 ,85, 80, 105, 40);
         this.addMove(new ShadowBall());
         this.addMove(new Swagger());
         this.addMove(new SweetKiss());

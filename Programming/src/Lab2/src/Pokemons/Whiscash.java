@@ -7,11 +7,11 @@ import Attacks.WaterPulse;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
-public class Whicash extends Pokemon {
-    public Whicash(String name, int level) {
+public class Whiscash extends Pokemon {
+    public Whiscash(String name, int level) {
         super(name, level);
         setType(Type.PSYCHIC);
-        setStats(50, 150 ,100, 50, 50, 50);
+        setStats(110, 78 ,73, 76, 71, 60);
         this.addMove(new Rest());
         this.addMove(new WaterPulse());
         this.addMove(new IceBeam());
