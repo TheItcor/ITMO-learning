@@ -13,8 +13,7 @@ std::string makeString(std::string fileName) {
     std::ifstream in;
     in.open(fileName);
     
-    std::string allTxt = "";
-    std::string line;
+    std::string line, allTxt; // allTxt - может не заработать, проверить на тестах
     while (std::getline(in, line)) {
         allTxt += line;
     }
@@ -25,12 +24,15 @@ std::string makeString(std::string fileName) {
 }
 
 
-std::string makeBin(std::string jsonTxt) {
-    /* */
-    
+std::string makeBin(std::string lineTxt) {
+    /* Функция, принимает однострочный текст, убирает пробелы, парсит и создаёт текст для бинарника */
 
+    std::string noSpacesTxt, binTxt;
+    for (char c: lineTxt) {
+        if (c != ' ') noSpacesTxt += c;
+    }
 
-    return;
+    return noSpacesTxt;
 }
 
 
@@ -38,8 +40,8 @@ std::string makeBin(std::string jsonTxt) {
 int main () {
     std::string someTxt;
     someTxt = makeString("lessons.json");
-    
-    
+
+
     
     return 0;
 }
