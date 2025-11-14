@@ -1,11 +1,11 @@
 package Attacks;
 
-import ru.ifmo.se.pokemon.PhysicalMove;
+import ru.ifmo.se.pokemon.StatusMove;
 import ru.ifmo.se.pokemon.Type;
 
-public class Confide extends PhysicalMove {
+public class Confide extends StatusMove {
     public Confide() {
-        super(Type.PSYCHIC, 90, 1.0, 0, 3);
+        super(Type.NORMAL, 0, 0, 20, 100);
     }
 
     @Override

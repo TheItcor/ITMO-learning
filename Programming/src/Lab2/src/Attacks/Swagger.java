@@ -1,11 +1,11 @@
 package Attacks;
 
-import ru.ifmo.se.pokemon.PhysicalMove;
+import ru.ifmo.se.pokemon.StatusMove;
 import ru.ifmo.se.pokemon.Type;
 
-public class Swagger extends PhysicalMove {
+public class Swagger extends StatusMove {
     public Swagger() {
-        super(Type.PSYCHIC, 90, 1.0, 0, 3);
+        super(Type.NORMAL, 0, 85, 15, 100);
     }
 
     @Override

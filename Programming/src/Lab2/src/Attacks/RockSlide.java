@@ -5,7 +5,7 @@ import ru.ifmo.se.pokemon.Type;
 
 public class RockSlide extends PhysicalMove {
     public RockSlide() {
-        super(Type.PSYCHIC, 90, 1.0, 0, 3);
+        super(Type.ROCK, 75, 90, 10, 30);
     }
 
     @Override

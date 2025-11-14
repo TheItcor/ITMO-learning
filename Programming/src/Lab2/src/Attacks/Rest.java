@@ -1,11 +1,12 @@
 package Attacks;
 
-import ru.ifmo.se.pokemon.PhysicalMove;
+
+import ru.ifmo.se.pokemon.StatusMove;
 import ru.ifmo.se.pokemon.Type;
 
-public class Rest extends PhysicalMove {
+public class Rest extends StatusMove {
     public Rest() {
-        super(Type.PSYCHIC, 90, 1.0, 0, 3);
+        super(Type.PSYCHIC, 0, 0, 5, 100);
     }
 
     @Override

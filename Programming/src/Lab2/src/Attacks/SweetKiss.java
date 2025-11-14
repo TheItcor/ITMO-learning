@@ -1,11 +1,11 @@
 package Attacks;
 
-import ru.ifmo.se.pokemon.PhysicalMove;
+import ru.ifmo.se.pokemon.StatusMove;
 import ru.ifmo.se.pokemon.Type;
 
-public class SweetKiss extends PhysicalMove {
+public class SweetKiss extends StatusMove {
     public SweetKiss() {
-        super(Type.PSYCHIC, 90, 1.0, 0, 3);
+        super(Type.FAIRY, 0, 75, 10, 0);
     }
 
     @Override

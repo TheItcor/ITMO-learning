@@ -1,11 +1,11 @@
 package Attacks;
 
-import ru.ifmo.se.pokemon.PhysicalMove;
+import ru.ifmo.se.pokemon.SpecialMove;
 import ru.ifmo.se.pokemon.Type;
 
-public class ShadowBall extends PhysicalMove {
+public class ShadowBall extends SpecialMove {
     public ShadowBall() {
-        super(Type.PSYCHIC, 90, 1.0, 0, 3);
+        super(Type.GHOST, 80, 100, 15, 20);
     }
 
     @Override

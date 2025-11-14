@@ -1,11 +1,12 @@
 package Attacks;
 
-import ru.ifmo.se.pokemon.PhysicalMove;
+
+import ru.ifmo.se.pokemon.SpecialMove;
 import ru.ifmo.se.pokemon.Type;
 
-public class IceBeam extends PhysicalMove {
+public class IceBeam extends SpecialMove {
     public IceBeam() {
-        super(Type.PSYCHIC, 90, 1.0, 0, 3);
+        super(Type.ICE, 90, 100, 10, 30);
     }
 
     @Override

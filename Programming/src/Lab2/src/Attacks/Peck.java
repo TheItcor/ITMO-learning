@@ -5,7 +5,7 @@ import ru.ifmo.se.pokemon.Type;
 
 public class Peck extends PhysicalMove {
     public Peck() {
-        super(Type.PSYCHIC, 100, 1.0, 0, 3);
+        super(Type.FLYING, 35, 100, 35, 100);
     }
 
     @Override
