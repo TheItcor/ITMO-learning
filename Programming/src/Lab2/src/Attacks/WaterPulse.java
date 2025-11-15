@@ -13,7 +13,7 @@ public class WaterPulse extends SpecialMove {
     @Override
     protected void applyOppEffects(Pokemon p) {
         if (Math.random() < 0.1)
-            Effect.freeze(p);
+            Effect.freeze( p);
     }
 
     @Override
