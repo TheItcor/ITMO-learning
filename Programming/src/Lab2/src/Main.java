@@ -5,12 +5,12 @@ import ru.ifmo.se.pokemon.*;
 public class Main {
     public static void main(String[] args) {
         Battle b = new Battle();
-        b.addAlly(new Skarmory("Бэбэй", 5));
-        b.addAlly(new Whiscash("Шнюпи", 5));
-        b.addAlly(new Barboach("Дюпи", 5));
-        b.addFoe(new Togepi("Ануснимус", 5));
-        b.addFoe(new Togetic("Бро", 5));
-        b.addFoe(new Togekiss("Линус Торвальдс", 5));
+        b.addAlly(new Skarmory("Аристотель", 5));
+        b.addAlly(new Whiscash("Сократ", 5));
+        b.addAlly(new Barboach("Платон", 5));
+        b.addFoe(new Togepi("Сенека", 5));
+        b.addFoe(new Togetic("Пифагор", 5));
+        b.addFoe(new Togekiss("Эпикур", 5));
         b.go();
     }
 }

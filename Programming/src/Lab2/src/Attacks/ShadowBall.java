@@ -5,7 +5,7 @@ import ru.ifmo.se.pokemon.Type;
 
 public class ShadowBall extends SpecialMove {
     public ShadowBall() {
-        super(Type.GHOST, 80, 100, 15, 20);
+        super(Type.GHOST, 80, 100, 15, 0);
     }
 
     @Override
