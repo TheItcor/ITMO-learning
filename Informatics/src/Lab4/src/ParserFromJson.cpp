@@ -78,7 +78,8 @@ int main () {
     someTxt = removeSpace(makeString("test.json"));
     parseTxt = parseJson(someTxt);
 
-    std::cout << parseTxt;
+    std::cout << someTxt << std::endl;
+    std::cout << parseTxt << std::endl;
     
     
     return 0;
