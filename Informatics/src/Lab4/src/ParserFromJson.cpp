@@ -16,6 +16,7 @@ std::string makeString(const std::string& fileName) {
     
 
     std::string line, allTxt;
+    allTxt.reserve(50); // резервируем память для строки условные 100 байт
     while (std::getline(in, line)) {
         allTxt += line;
     }
@@ -28,9 +29,11 @@ std::string makeString(const std::string& fileName) {
 
 std::string removeSpace(const std::string& lineTxt) {
     /* Функция, принимает однострочный текст, убирает пробелы*/
+    std::string noSpacesTxt;
+    noSpacesTxt.reserve(lineTxt.size() + 100); // Заранее прописываем память для строки
 
     /* Убираем пробелы */
-    std::string noSpacesTxt, binTxt;
+    std::string binTxt;
     for (char c: lineTxt) {
         if (c != ' ') noSpacesTxt += c;
     }
@@ -40,7 +43,7 @@ std::string removeSpace(const std::string& lineTxt) {
 
 
 std::string parseJson(const std::string& lineTxt) {
-    /* Парсим json в [] */
+    /* Функция, которая парсим строку json в [ключ, [значение]] */
     std::string result;
     result.reserve(lineTxt.size() + 100); // Заранее прописываем память для строки
     
