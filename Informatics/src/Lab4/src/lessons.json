@@ -1,13 +1,13 @@
 {
     "Monday" : {
-        "lesson" : {
+        "lesson_0" : {
             "time" : "11:30-13:30",
             "subject" : "Informatics",
             "group" : "KSiT 2",
             "room" : "1216",
             "format" : "Part-time"
         },
-        "lesson" : {
+        "lesson_1" : {
             "time" : "11:30-13:30",
             "subject" : "Informatics",
             "group" : "SPPO 2",
@@ -16,42 +16,42 @@
         }
     },
     "Saturday" : {
-        "lesson" : {
+        "lesson_0" : {
             "time" : "8:10-9:40",
             "subject" : "Parallel Computing",
             "group" : "PRLCOMP 1",
             "room" : "1333",
             "format" : "Part-time"
         },
-        "lesson" : {
+        "lesson_1" : {
             "time" : "9:50-11:20",
             "subject" : "Parallel Computing",
             "group" : "PRLCOMP 1.1",
             "room" : "1333",
             "format" : "Part-time"
         },
-        "lesson" : {
+        "lesson_2" : {
             "time" : "11:30-13:00",
             "subject" : "Informatics",
             "group" : "PZ3106 1.1",
             "room" : "1333",
             "format" : "Part-time"
         },
-        "lesson" : {
+        "lesson_3" : {
             "time" : "11:30-13:00",
             "subject" : "Informatics",
             "group" : "PZ3107 1.2",
             "room" : "1333",
             "format" : "Part-time"
         },
-        "lesson" : {
+        "lesson_4" : {
             "time" : "13:30-15:00",
             "subject" : "Informatics",
             "group" : "PZ3105 1.1",
             "room" : "1333",
             "format" : "Part-time"
         },
-        "lesson" : {
+        "lesson_5" : {
             "time" : "13:30-15:00",
             "subject" : "Informatics",
             "group" : "PZ3107 1.2",

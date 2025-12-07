@@ -97,10 +97,14 @@ std::string binParseToYaml(const std::string& input) {
 
 int main() {
     std::string fileName = "output.bin";
-    readBin(fileName);
+    std::string lessonsYaml = binParseToYaml(readBin(fileName));
+    
 
-
-
+    // записываем отформатированные данные в .yaml
+    std::ofstream file("lessons.yaml");
+    if (file) {
+        file << lessonsYaml;
+    }
 
     return 0;
 }
