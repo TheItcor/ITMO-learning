@@ -83,8 +83,8 @@ int main () {
     someTxt = removeSpace(makeString("lessons.json"));
     parseTxt = parseJson(someTxt);
 
-    std::cout << "input: " << someTxt << std::endl << std::endl;
-    std::cout << "output: " << parseTxt << std::endl;
+    // std::cout << "input: " << someTxt << std::endl << std::endl;
+    // std::cout << "output: " << parseTxt << std::endl;
     
     std::ofstream file("output.bin", std::ios::binary); // открываем бинарный файл, в бинарнорм режиме для записи
     file.write(parseTxt.c_str(), parseTxt.size()); // запись в бинарный файл

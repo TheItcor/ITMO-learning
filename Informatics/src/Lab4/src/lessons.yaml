@@ -1,1 +1,50 @@
-Monday: lesson_0: time: "11:30-13:30"subject: "Informatics"group: "KSiT2"room: "1216"format: "Part-time"lesson_1: time: "11:30-13:30"subject: "Informatics"group: "SPPO2"room: "1216"format: "Part-time"Saturday: lesson_0: time: "8:10-9:40"subject: "ParallelComputing"group: "PRLCOMP1"room: "1333"format: "Part-time"lesson_1: time: "9:50-11:20"subject: "ParallelComputing"group: "PRLCOMP1.1"room: "1333"format: "Part-time"lesson_2: time: "11:30-13:00"subject: "Informatics"group: "PZ31061.1"room: "1333"format: "Part-time"lesson_3: time: "11:30-13:00"subject: "Informatics"group: "PZ31071.2"room: "1333"format: "Part-time"lesson_4: time: "13:30-15:00"subject: "Informatics"group: "PZ31051.1"room: "1333"format: "Part-time"lesson_5: time: "13:30-15:00"subject: "Informatics"group: "PZ31071.2"room: "1333"format: "Part-time"
+Monday: 
+  lesson:
+    -   time: "11:30-13:30"
+    -   subject: "Informatics"
+    -   group: "KSiT2"
+    -   room: "1216"
+    -   format: "Part-time"
+  lesson:
+    -   time: "11:30-13:30"
+    -   subject: "Informatics"
+    -   group: "SPPO2"
+    -   room: "1216"
+    -   format: "Part-time"
+Saturday: 
+  lesson:
+    -   time: "8:10-9:40"
+    -   subject: "ParallelComputing"
+    -   group: "PRLCOMP1"
+    -   room: "1333"
+    -   format: "Part-time"
+  lesson:
+    -   time: "9:50-11:20"
+    -   subject: "ParallelComputing"
+    -   group: "PRLCOMP1.1"
+    -   room: "1333"
+    -   format: "Part-time"
+  lesson:
+    -   time: "11:30-13:00"
+    -   subject: "Informatics"
+    -   group: "PZ31061.1"
+    -   room: "1333"
+    -   format: "Part-time"
+  lesson:
+    -   time: "11:30-13:00"
+    -   subject: "Informatics"
+    -   group: "PZ31071.2"
+    -   room: "1333"
+    -   format: "Part-time"
+  lesson:
+    -   time: "13:30-15:00"
+    -   subject: "Informatics"
+    -   group: "PZ31051.1"
+    -   room: "1333"
+    -   format: "Part-time"
+  lesson:
+    -   time: "13:30-15:00"
+    -   subject: "Informatics"
+    -   group: "PZ31071.2"
+    -   room: "1333"
+    -   format: "Part-time"

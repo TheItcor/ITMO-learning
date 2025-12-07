@@ -41,7 +41,6 @@ std::string binParseToYaml(const std::string& input) {
         if (c == '[' && i + 5 < input.size() && input.substr(i, 5) == "[[" && 
             (input[i + 5] == 'M' || input[i + 5] == 'S' || input[i + 5] == 'T' || 
              input[i + 5] == 'W' || input[i + 5] == 'F')) {
-            // Начало дня (Monday, Tuesday, etc.)
             i++; // Пропускаем второй '['
             yaml += std::string(indent, ' ') + "- ";
             inDay = true;
@@ -54,7 +53,6 @@ std::string binParseToYaml(const std::string& input) {
                 i = end + 1; // Переходим к закрывающей скобке
                 
                 if (input[i + 1] == ':') {
-                    // Это ключ
                     yaml += std::string(indent, ' ') + content + ":";
                     if (content == "lesson") {
                         inLesson = true;
@@ -72,14 +70,12 @@ std::string binParseToYaml(const std::string& input) {
                 }
             }
         } else if (c == ']' && inDay) {
-            // Конец дня
             inDay = false;
             indent -= 2;
             if (i + 1 < input.size() && input[i + 1] == ',') {
                 yaml += '\n';
             }
         } else if (c == ']' && inLesson) {
-            // Конец урока
             inLesson = false;
             indent -= 2;
             yaml += '\n';
@@ -101,7 +97,7 @@ int main() {
     
 
     // записываем отформатированные данные в .yaml
-    std::ofstream file("lessons.yaml");
+    std::ofstream file("lessons.yml");
     if (file) {
         file << lessonsYaml;
     }
