@@ -1,6 +1,10 @@
 {
 "cat" : {
     "name":"barsik",
-    "age": 17
+    "age": 5
+    }
+"cat2" : {
+    "name":"Mr.Cat",
+    "age": 9
     }
 }

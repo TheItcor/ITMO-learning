@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 
+
 /* TODO
 * [x] 1. Функция1, принимает Имя.Файла, возращает весь текст в одну строку без n/ 
 * [x] 2. Функция2, принимает текст и убирает пробелы.
@@ -43,44 +44,52 @@ std::string removeSpace(const std::string& lineTxt) {
 
 
 std::string parseJson(const std::string& lineTxt) {
-    /* Функция, которая парсим строку json в [ключ, [значение]] */
     std::string result;
-    result.reserve(lineTxt.size() + 100); // Заранее прописываем память для строки
+    result.reserve(lineTxt.size() + 128);
     
-    bool after_colon = false;
-
-    for (char c : lineTxt) {
-        if (c == ':') {
-            // Открываем значение
-            result += ":["; 
-            after_colon = true;
-            continue;
+    bool inQuotes = false;
+    
+    for (size_t i = 0; i < lineTxt.size(); i++) {
+        char c = lineTxt[i];
+        
+        if (c == '"') {
+            if (!inQuotes) {
+                result += "[\""; // начало строки
+            } else {
+                result += "\"]"; // конец строки
+            }
+            inQuotes = !inQuotes;
+        } else if (!inQuotes) {
+            // вне кавычек
+            if (c == '{') {
+                result += '[';
+            } else if (c == '}') {
+                result += ']';
+            } else {
+                result += c;
+            }
+        } else {
+            // внутри кавычек
+            result += c;
         }
-
-        if (after_colon && (c == ',' || c == '}')) {
-            // Закрывает значение
-            result += ']';
-            after_colon = false;
-        }
-
-        if (c == '{') result += '[';
-        else if (c == '}' && !after_colon) result += ']';
-        else if (c != ',' || !after_colon) result += c; 
     }
-
+    
     return result;
 }
 
 
-
 int main () {
     std::string someTxt, parseTxt;
-    someTxt = removeSpace(makeString("test.json"));
+    someTxt = removeSpace(makeString("lessons.json"));
     parseTxt = parseJson(someTxt);
 
-    std::cout << someTxt << std::endl;
-    std::cout << parseTxt << std::endl;
+    std::cout << "input: " << someTxt << std::endl << std::endl;
+    std::cout << "output: " << parseTxt << std::endl;
     
+    std::ofstream file("output.bin", std::ios::binary); // открываем бинарный файл, в бинарнорм режиме для записи
+    file.write(parseTxt.c_str(), parseTxt.size()); // запись в бинарный файл
+
+    file.close();
     
     return 0;
 }
