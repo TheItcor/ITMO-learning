@@ -1,0 +1,14 @@
+Monday:
+  lesson:
+    time: 11:30-13:30
+    subject: Informatics
+    group: SPPO 2
+    room: '1216'
+    format: Part-time
+Saturday:
+  lesson:
+    time: 13:30-15:00
+    subject: Informatics
+    group: PZ3107 1.2
+    room: '1333'
+    format: Part-time

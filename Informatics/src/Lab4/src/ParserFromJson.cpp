@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <ctime>
 
 
 /* TODO
@@ -79,6 +80,10 @@ std::string parseJson(const std::string& lineTxt) {
 
 
 int main () {
+    // Замеряем время
+    std::clock_t start = std::clock();
+    
+    
     std::string someTxt, parseTxt;
     someTxt = removeSpace(makeString("lessons.json"));
     parseTxt = parseJson(someTxt);
@@ -90,6 +95,14 @@ int main () {
     file.write(parseTxt.c_str(), parseTxt.size()); // запись в бинарный файл
 
     file.close();
+    
+    
+    // Окончание замерки времени
+    std::clock_t end = std::clock();
+    double duration = double(end - start) / CLOCKS_PER_SEC;
+    
+    std::cout << "С++: Json -> Bin. Прошло: " << duration << " секунд" << std::endl;
+    
     
     return 0;
 }

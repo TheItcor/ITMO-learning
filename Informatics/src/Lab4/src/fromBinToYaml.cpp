@@ -1,14 +1,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <ctime>
 
-/* TODO
-* 
-* [x] функция которая считывает текст и переводит его в одну строку
-* [ ] функция которая парсит и переводит в yaml
-* 
-*
-*/
 
 
 std::string readBin(const std::string& fileName) {
@@ -92,15 +86,25 @@ std::string binParseToYaml(const std::string& input) {
 
 
 int main() {
+    // замеряем время   
+    std::clock_t start = std::clock(); 
+    
     std::string fileName = "output.bin";
     std::string lessonsYaml = binParseToYaml(readBin(fileName));
     
 
     // записываем отформатированные данные в .yaml
-    std::ofstream file("lessons.yml");
+    std::ofstream file("lеssons.yaml");
     if (file) {
         file << lessonsYaml;
     }
+    
+    
+    
+    // окончание замера времени
+    std::clock_t end = std::clock();
+    double duration = double(end - start) / CLOCKS_PER_SEC;
+    std::cout << "С++: Bin -> Yaml. Прошло: " << duration << " секунд" << std::endl;
 
     return 0;
 }
