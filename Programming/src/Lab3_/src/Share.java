@@ -25,4 +25,8 @@ public class Share {
     public String getName() {
         return name;
     }
+
+    public void makeLaugh() {
+        System.out.println(name + " ничего кроме смеха не вызывает");
+    }
 }

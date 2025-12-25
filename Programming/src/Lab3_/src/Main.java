@@ -12,7 +12,7 @@ public class Main {
         Skuperfield.order(); // Скуперфилд приказывает продавать акции
         newGorloderik.first_work(giganticShare);
 
-        // Акции вызывают смех
+        giganticShare.makeLaugh();
 
         Skuperfield.reducePrice(giganticShare, 0.1d);
         Skuperfield.reducePrice(giganticShare, 0.1d);
@@ -25,6 +25,7 @@ public class Main {
 
         Skuperfield.waitDay();
 
+        // конец
         News.publishNews();
         if (Migi.isEscaped() && Zhulio.isEscaped()) {
             Migi.run();

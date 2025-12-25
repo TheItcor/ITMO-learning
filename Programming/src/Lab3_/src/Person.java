@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class Person {
+public class Person {
     /*класс для любого человека*/
     String name;
     double money = 0;

@@ -34,6 +34,6 @@ public class Investor extends Person implements ShareOwner, Employer {
     }
 
     public void waitDay() {
-        System.out.println("Ждёт следующего дня...");
+        System.out.println(name + " ждёт следующего дня...");
     }
 }
