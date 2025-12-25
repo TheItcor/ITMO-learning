@@ -2,20 +2,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Person {
-    /*Абстрактный класс для любого человека*/
+    /*класс для любого человека*/
     String name;
-    float money;
+    double money = 0;
 
-    public Person(String name, int money) {
+    public Person(String name, double money) {
         this.name = name;
         this.money = money;
     }
 
-    public void setMoney(float money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 
-    public float getMoney() {
+    public double getMoney() {
         return money;
     }
 }
@@ -24,13 +24,8 @@ class Person {
 interface Employee {
     /* Работник, не путать с работодателем Employer */
 
-    static void first_work() {
-        System.out.println("Работаем...");
-    }
-
-    static void another_work() {
-        System.out.println("Делаем другую работу...");
-    }
+    default void first_work() {};
+    default void another_work() {};
 }
 
 
@@ -39,9 +34,7 @@ interface Employer {
 
     List<Person> listEmployees = new ArrayList<>(); // список работников
 
-    static void order() {
-        System.out.println("Отдал распоряжение продавать акции");
-    }
+    void order();
 
 }
 
@@ -49,42 +42,21 @@ interface Employer {
 interface Scammers {
     boolean escaped = false;
 
-    static void run() {
-        System.out.println("Побег!");
-    }
+    void run();
 
-    static boolean isEscaped() {
-        return escaped;
-    }
+    boolean isEscaped();
 }
 
 
 interface ShareOwner {
-    static void waitDay() {
-        System.out.println("Ждёт следующего дня...");
-    }
+    void waitDay();
 
+    void dream();
 
-    static void dream() {
-        System.out.println("Мечтает уже лишь о том, чтоб хотя бы вернуть свои деньги.");
-    }
+    void leavePrice(Share share);
 
+    void reducePrice(Share share, double price);
 
-    static void leavePrice(Share share) {
-        System.out.println(share.getOwner() + " решил не снижать больше цену.");
-    }
-
-
-    static void reducePrice(Share share, float price) {
-        /*Умеьшение цены на н фертингов*/
-        float newPrice = share.getCost() - price;
-        System.out.println(share.getOwner() + "Уменьшает цену до " + newPrice);
-    }
-
-    static void soldShare(Share share) {
-        /* Владелец акции продаёт акции за н-ную цену */
-
-        System.out.println(share.getOwner() + " Пытается продать " + share.getName() + " за " + share.getCost() + " Фертингов.");
-    }
+    void soldShare(Share share);
 }
 

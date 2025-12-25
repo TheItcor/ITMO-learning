@@ -1,23 +1,20 @@
 public class Share {
-    String name;
-    String owner;
-    float cost;
+    String name, owner;
+    double cost;
     int value;  // количество акций
 
-    public Share (String owner, float cost) {
+    public Share (String name, String owner, double cost, int value) {
+        this.name = name;
         this.owner = owner;
         this.cost = cost;
+        this.value = value;
     }
 
-    public void setCost(float cost) {
-        this.cost = cost;
+    public void setCost(double cost) {
+        this.cost = (double) cost;
     }
 
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
-    public float getCost() {
+    public double getCost() {
         return cost;
     }
 
