@@ -36,12 +36,10 @@ public class Main {
         News newsToday = new News(giganticShare,true);
         newsToday.publishNews();
         for (Scammer oneScammer : scammerList) {
-            if (oneScammer.isEscaped()) {
-                try {
-                    oneScammer.run();
-                } catch (Exception e) {
-                    System.err.println("ЪУЪ");
-                }
+            try {
+                oneScammer.run();
+            } catch (Exception e) {
+                System.out.println("[Ошибка] " + e.getMessage());
             }
         }
         newsToday.publishPhoto();
