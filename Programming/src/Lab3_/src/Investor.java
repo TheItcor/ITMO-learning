@@ -3,7 +3,6 @@ public class Investor extends Person implements ShareOwner, Employer {
         super(name, money);
     }
 
-    @Override
     public void order() {
         System.out.println(name + " отдал распоряжение продавать акции.");
     }
@@ -25,12 +24,6 @@ public class Investor extends Person implements ShareOwner, Employer {
         double newPrice =  share.getCost() - price;
         share.setCost(newPrice);
         System.out.println(share.getOwner() + " уменьшает цену до " + String.format("%.1f", newPrice) + " фертингов за штуку"); // используем string.format из-за проблемы арифметики с плавающей точкой
-    }
-
-    public void soldShare(Share share) {
-        /* Владелец акции продаёт акции за н-ную цену */
-
-        System.out.println(share.getOwner() + " Пытается продать " + share.getName() + " за " + share.getCost() + " Фертингов.");
     }
 
     public void waitDay() {

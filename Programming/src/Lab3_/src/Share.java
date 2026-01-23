@@ -1,32 +1,33 @@
 public class Share {
-    String name, owner;
-    double cost;
-    int value;  // количество акций
+    protected final String name;
+    protected String owner;
+    protected double cost;
+    protected int value;  // количество акций
 
-    public Share (String name, String owner, double cost, int value) {
+    protected Share (String name, String owner, double cost, int value) {
         this.name = name;
         this.owner = owner;
         this.cost = cost;
         this.value = value;
     }
 
-    public void setCost(double cost) {
-        this.cost = (double) cost;
+    protected void setCost(double cost) {
+        this.cost = cost;
     }
 
-    public double getCost() {
+    protected double getCost() {
         return cost;
     }
 
-    public String getOwner() {
+    protected String getOwner() {
         return owner;
     }
 
-    public String getName() {
+    protected String getName() {
         return name;
     }
 
-    public void makeLaugh() {
+    protected void makeLaugh() {
         System.out.println(name + " ничего кроме смеха не вызывает");
     }
 }

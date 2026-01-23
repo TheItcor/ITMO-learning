@@ -1,8 +1,15 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Investor Skuperfield = new Investor("Скуперфильд", 20);
-        Scammer Migi = new Scammer("Миги");
-        Scammer Zhulio = new Scammer("Жулио");
+        Scammer Migi = new Scammer("Миги", false);
+        Scammer Zhulio = new Scammer("Жулио", true);
+        List<Scammer> scammerList = new ArrayList<>();
+        scammerList.add(Migi);
+        scammerList.add(Zhulio);
+
         Shouter newGorloderik = new Shouter("Горлодерик", 0);
 
         Share giganticShare = new Share("Гигантская Акция", "Скуперфильд", 1, 100);
@@ -25,16 +32,18 @@ public class Main {
 
         Skuperfield.waitDay();
 
-        // конец
-        News.publishNews();
-        if (Migi.isEscaped() && Zhulio.isEscaped()) {
-            Migi.run();
-            Zhulio.run();
+        // Конец, новости
+        News newsToday = new News(giganticShare,true);
+        newsToday.publishNews();
+        for (Scammer oneScammer : scammerList) {
+            if (oneScammer.isEscaped()) {
+                try {
+                    oneScammer.run();
+                } catch (Exception e) {
+                    System.err.println("ЪУЪ");
+                }
+            }
         }
-        News.publishPhoto();
-        People.revoltInStroke(giganticShare);
-        People.demandMoney(giganticShare);
-
-
+        newsToday.publishPhoto();
     }
 }
