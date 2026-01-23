@@ -1,4 +1,6 @@
 public class People {
+
+    // Для новостей
     protected static void revoltInStroke(Share share) {
         System.out.println("Разъяренная толпа ворвалась в контору по продаже " + share.getName() + ".");
     }
@@ -8,6 +10,7 @@ public class People {
     }
 
 
+    // Для реакции enum
 
 }
 
