@@ -7,10 +7,12 @@ public class Investor extends Person implements ShareOwner, Employer {
         System.out.println(name + " отдал распоряжение продавать акции.");
     }
 
-    public void order(Share share) {
-        System.out.println(name + " отдал распоряжение продавать акции по " + share.getCost() + " фертингов");
-    }
+//    public void order(Share share) {
+//        System.out.println(name + " отдал распоряжение продавать акции по " + share.getCost() + " фертингов");
+//    }
 
+
+    @Override
     public void dream() {
         System.out.println(name + " мечтает уже лишь о том, чтоб хотя бы вернуть свои деньги.");
     }

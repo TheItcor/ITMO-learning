@@ -1,6 +1,6 @@
 public enum PeopleReaction {
     LAUGH("смех"),
-    IGNORE("никто не обратил внимание на"),
+    IGNORE("пофик"),
     ANGER("гнев");
 
     private final String description;
@@ -11,5 +11,13 @@ public enum PeopleReaction {
 
     public String getDescription() {
         return description;
+    }
+
+    public void getReaction(Share share) {
+        if (this != IGNORE) {
+            System.out.println(share.getName() + " вызывает " + this.getDescription() + " у толпы");
+        } else {
+            System.out.println("Всем плевать на " + share.getName());
+        }
     }
 }

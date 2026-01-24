@@ -4,5 +4,8 @@ public class runException extends RuntimeException{
         super(message);
     }
 
-
+    @Override
+    public String getMessage() {
+        return "[Ошибка]" + super.getMessage();
+    }
 }

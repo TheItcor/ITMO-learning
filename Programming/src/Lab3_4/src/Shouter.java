@@ -3,6 +3,8 @@ public class Shouter extends Person implements Employee {
         super(name, money);
     }
 
+    @Override
+    public void dream() {}
 
     public void first_work(Share share) {
         System.out.println("Горлодерик предлагает " + share.getName() + " по " + share.getCost() + " фертинг за штуку.");

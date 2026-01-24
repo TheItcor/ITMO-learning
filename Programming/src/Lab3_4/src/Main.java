@@ -20,13 +20,15 @@ public class Main {
         newGorloderik.first_work(giganticShare);
 
         PeopleReaction reaction = PeopleReaction.LAUGH;
-        giganticShare.makeLaugh();
+        reaction.getReaction(giganticShare);
+        //giganticShare.makeLaugh();
 
         Skuperfield.reducePrice(giganticShare, 0.1d);
         Skuperfield.reducePrice(giganticShare, 0.1d);
         Skuperfield.reducePrice(giganticShare, 0.1d);
 
         reaction = PeopleReaction.IGNORE;
+        reaction.getReaction(giganticShare);
         Skuperfield.dream();
 
         Skuperfield.reducePrice(giganticShare, 0.2d);
@@ -35,9 +37,10 @@ public class Main {
         Skuperfield.waitDay();
 
         // Конец, новости
-        reaction = PeopleReaction.ANGER;
         News newsToday = new News(giganticShare,true);
         newsToday.publishNews();
+        reaction = PeopleReaction.ANGER;
+        reaction.getReaction(giganticShare);
 
         for (Scammer oneScammer : scammerList) {
             try {

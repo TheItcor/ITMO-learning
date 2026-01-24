@@ -1,6 +1,9 @@
 public class Scammer extends Person implements Scammers{
     protected boolean hasEscaped;
 
+    @Override
+    public void dream() {}
+
     public Scammer(String name, boolean hasEscaped) {
         super(name, 100);
         this.hasEscaped = hasEscaped;
