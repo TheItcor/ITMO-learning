@@ -1,3 +1,6 @@
+package Events;
+import Characters.People;
+
 public record News(Share share, boolean isHasPhotos) {
     public News(Share share, boolean isHasPhotos) {
         this.isHasPhotos = isHasPhotos;
@@ -14,7 +17,7 @@ public record News(Share share, boolean isHasPhotos) {
             People.revoltInStroke(share);
             People.demandMoney(share);
         } else {
-            System.out.println("ЭПШТЕЙН НЕ УБИВАЛ СЕБЯ.");
+            System.out.println("Фотографий нет.");
         }
     }
 }

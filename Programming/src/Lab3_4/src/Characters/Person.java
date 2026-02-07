@@ -1,7 +1,9 @@
+package Characters;
+
 public abstract class Person {
     /* Класс для любого человека */
     protected final String name;
-    protected double money = 0;
+    protected double money;
 
     public Person(String name, double money) {
         this.name = name;

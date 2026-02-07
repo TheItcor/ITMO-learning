@@ -1,3 +1,5 @@
+package Characters;
+
 interface Scammers {
     boolean escaped = false;
     

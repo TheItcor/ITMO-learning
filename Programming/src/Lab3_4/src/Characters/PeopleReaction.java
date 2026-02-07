@@ -1,3 +1,6 @@
+package Characters;
+import Events.Share;
+
 public enum PeopleReaction {
     LAUGH("смех"),
     IGNORE("пофик"),

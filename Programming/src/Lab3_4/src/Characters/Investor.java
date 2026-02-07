@@ -1,3 +1,6 @@
+package Characters;
+import Events.*;
+
 public class Investor extends Person implements ShareOwner, Employer {
     public Investor(String name, int money) {
         super(name, money);
@@ -7,7 +10,7 @@ public class Investor extends Person implements ShareOwner, Employer {
         System.out.println(name + " отдал распоряжение продавать акции.");
     }
 
-//    public void order(Share share) {
+//    public void order(Events.Share share) {
 //        System.out.println(name + " отдал распоряжение продавать акции по " + share.getCost() + " фертингов");
 //    }
 

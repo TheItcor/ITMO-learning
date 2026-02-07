@@ -1,5 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
+import Characters.*;
+import Events.News;
+import Events.Share;
+import Error.runException;
+
+// 34242
 
 public class Main {
     public static void main(String[] args) {
@@ -12,22 +20,25 @@ public class Main {
 
         Shouter newGorloderik = new Shouter("Горлодерик", 0);
 
-        Share giganticShare = new Share("Гигантская Акция", "Скуперфильд", 1, 100);
+        Random random = new Random();
+        int shareCost = random.nextInt(1, 3);
+
+        Share giganticShare = new Share("Гигантская Акция", "Скуперфильд", shareCost, 100);
 
         // Начало сценария:
 
         Skuperfield.order(); // Скуперфилд приказывает продавать акции
         newGorloderik.first_work(giganticShare);
 
-        PeopleReaction reaction = PeopleReaction.LAUGH;
+        PeopleReaction reaction = random.nextBoolean() ? PeopleReaction.LAUGH : PeopleReaction.IGNORE;
         reaction.getReaction(giganticShare);
         //giganticShare.makeLaugh();
 
-        Skuperfield.reducePrice(giganticShare, 0.1d);
-        Skuperfield.reducePrice(giganticShare, 0.1d);
-        Skuperfield.reducePrice(giganticShare, 0.1d);
+        for (int i = 1; i < random.nextInt(1, 8); i++) {
+            Skuperfield.reducePrice(giganticShare, 0.1d);
+        }
 
-        reaction = PeopleReaction.IGNORE;
+        reaction = random.nextBoolean() ? PeopleReaction.ANGER : PeopleReaction.IGNORE;
         reaction.getReaction(giganticShare);
         Skuperfield.dream();
 
@@ -44,9 +55,13 @@ public class Main {
 
         for (Scammer oneScammer : scammerList) {
             try {
-                oneScammer.run();
-            } catch (Exception e) {
-                System.out.println("[Ошибка] " + e.getMessage());
+                if (random.nextBoolean()) {
+                    oneScammer.getCaught();
+                } else {
+                    oneScammer.run();
+                }
+            } catch (runException runException) {
+                System.out.println("[Ошибка] " + runException.getMessage());
             }
         }
         newsToday.publishPhoto();

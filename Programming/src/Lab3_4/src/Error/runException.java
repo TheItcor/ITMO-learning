@@ -1,3 +1,5 @@
+package Error;
+
 public class runException extends RuntimeException{
 
     public runException(String message) {

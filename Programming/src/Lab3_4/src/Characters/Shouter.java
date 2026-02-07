@@ -1,5 +1,8 @@
+package Characters;
+import Events.Share;
+
 public class Shouter extends Person implements Employee {
-    protected Shouter(String name, int money) {
+    public Shouter(String name, int money) {
         super(name, money);
     }
 
@@ -13,4 +16,6 @@ public class Shouter extends Person implements Employee {
     public void another_work() {
         System.out.println("Делаем другую работу...");
     }
+
+
 }
