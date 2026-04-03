@@ -1,6 +1,7 @@
 /.idea/
 .vscode
 /out/
+.zed
 
 /Programming/src/Programming.iml
 Programming/src/Lab2/Lab2.iml
