@@ -1,4 +1,4 @@
-package edu.project5.temp5.service.collection;
+package temp5.service.collection;
 
 import edu.project5.app.service.collection.Coordinates;
 import edu.project5.app.service.collection.Event;

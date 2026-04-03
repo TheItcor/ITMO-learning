@@ -1,4 +1,4 @@
-package edu.project5.temp5;
+package temp5;
 import edu.project5.app.service.*;
 import edu.project5.app.ui.*;
 

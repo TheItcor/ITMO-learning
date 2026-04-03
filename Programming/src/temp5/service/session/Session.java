@@ -1,4 +1,4 @@
-package edu.project5.temp5.service.session;
+package temp5.service.session;
 
 public class Session {
     void startSession() {}

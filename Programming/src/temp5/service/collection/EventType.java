@@ -1,4 +1,4 @@
-package edu.project5.temp5.service.collection;
+package temp5.service.collection;
 
 public enum EventType {
     CONCERT,
