@@ -6,31 +6,34 @@ import java.util.Scanner;
  * Интерпретатор для команд.
  */
 public class Interpreter {
+    private final Scanner userScanner;
+    private final CommandManager comManager;
+    private final HistoryManager historyManager;
+
     /**
      * Интерпретация пользовательского ввода
-     * @param userScanner - Scanner пользователя
-     * @param ComManager - Менеджер команд
-     *
      * p.s. ComManager возможно стоит изменить на map<String, Command> для большей безопасности...
      */
-    public void interpret(Scanner userScanner, CommandManager ComManager) {
+    public void interpret() {
         String input = userScanner.nextLine();
 
         // Разбиваем строку, введенную пользователем на "Команда Аргумент1 Аргумент2"
-        String[] userInputSplit = input.trim().split("\\s+");
+        String[] userInputSplit = input.trim().toLowerCase().split("\\s+");
 
         // Получаем команду из менеджера команд по ключу userInputSplit[0]
-        Command cmd = ComManager.getCommands().get(userInputSplit[0]);
+        Command cmd = comManager.getCommands().get(userInputSplit[0]);
 
-        // Статус выполнения. true - успешное выполнение, false - ошибка
-        boolean programStatement = true;
+
+
+        // Добавляем команду в историю команд, если команда "history", то не добавляем её ибо зачем
+        if (!userInputSplit[0].equals("history")) { historyManager.add(userInputSplit[0]); }
 
         // Выполнение
         if (cmd != null) {
             try {
                 cmd.execute();
             } catch (Exception e) {
-                // ловим ошибку и продолжаем выполнение
+                // Ловим ошибку и продолжаем выполнение
                 System.err.println("[ERR] Ошибка выполнения команды: " + e.getMessage());
             }
         } else {
@@ -38,4 +41,9 @@ public class Interpreter {
         }
     }
 
+    public Interpreter(Scanner userScanner, CommandManager comManager, HistoryManager historyManager) {
+        this.userScanner = userScanner;
+        this.comManager = comManager;
+        this.historyManager = historyManager;
+    }
 }
