@@ -45,6 +45,9 @@ public class App {
         // Управление коллекций (действия над коллекцией)
         CollectionManager CollManager = new CollectionManager(tickets);
 
+        // Пользовательский ввод
+        Scanner userScanner = new Scanner(System.in);
+
         // Добавление команд в список
         CommandManager ComManager = new CommandManager();
         ComManager.addCommand("exit", new Exit());
@@ -52,9 +55,10 @@ public class App {
         ComManager.addCommand("clear", new Clear(CollManager));
         ComManager.addCommand("info", new Info(CollManager));
         ComManager.addCommand("show", new Show(CollManager));
+        ComManager.addCommand("add", new Add(CollManager, userScanner));
 
 
-        Scanner userScanner = new Scanner(System.in);
+
         // Интерпретатор команд (пользовательский ввод -> команда)
         Interpreter interpreter = new Interpreter();
 

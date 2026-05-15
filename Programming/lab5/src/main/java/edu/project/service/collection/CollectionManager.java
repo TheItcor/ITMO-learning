@@ -33,5 +33,9 @@ public class CollectionManager {
         return tickets.size();
     }
 
+    public void addTicket(Ticket newTicket) {
+        tickets.add(newTicket);
+    }
+
 
 }

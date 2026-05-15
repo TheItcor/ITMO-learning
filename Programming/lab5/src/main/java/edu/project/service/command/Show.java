@@ -17,10 +17,10 @@ public class Show extends Command {
 
         for (Ticket t : tickets) {
             System.out.println("ID Билета: " + t.getId());
-            System.out.println("  Имя: " + t.getName());
+            System.out.println("  Название: " + t.getName());
             System.out.println("  Координаты: " + t.getCoordinates());
             System.out.println("  Дата создания: " + t.getCreationDate());
-            System.out.println("  Цена: " + t.getPrice());
+            System.out.println("  Цена: " + t.getPrice() + " Руб.");
             System.out.println("  Скидка: " + t.getDiscount() + "%");
             System.out.println("  Тип: " + (t.getType() != null ? t.getType() : "null (optional)"));
             System.out.println("  Ивент: " + t.getEvent());
