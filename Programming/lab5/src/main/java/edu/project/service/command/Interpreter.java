@@ -31,12 +31,16 @@ public class Interpreter {
         // Выполнение
         if (cmd != null) {
             try {
-                cmd.execute();
+                // Если есть аргумент, передаём его, иначе вызываем без аргументов
+                if (userInputSplit.length > 1) {
+                    cmd.execute(userInputSplit[1]);
+                } else {
+                    cmd.execute();
+                }
             } catch (Exception e) {
-                // Ловим ошибку и продолжаем выполнение
                 System.err.println("[ERR] Ошибка выполнения команды: " + e.getMessage());
             }
-        } else {
+        } else if (!userInputSplit[0].isEmpty()) {
             System.out.println("[ERR] Неизвестная команда: " + userInputSplit[0]);
         }
     }
