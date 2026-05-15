@@ -60,6 +60,7 @@ public class App {
         ComManager.addCommand("show", new Show(CollManager));
         ComManager.addCommand("add", new Add(CollManager, userScanner));
         ComManager.addCommand("history", new History(historyManager));
+        ComManager.addCommand("remove_by_id", new RemoveById(CollManager));
 
 
 
