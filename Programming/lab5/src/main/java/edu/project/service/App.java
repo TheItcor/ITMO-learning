@@ -62,6 +62,7 @@ public class App {
         ComManager.addCommand("history", new History(historyManager));
         ComManager.addCommand("remove_by_id", new RemoveById(CollManager));
         ComManager.addCommand("update_id", new UpdateId(CollManager, userScanner));
+        ComManager.addCommand("max_by_name", new MaxByName(CollManager));
 
 
 
@@ -72,6 +73,6 @@ public class App {
             interpreter.interpret();
         }
 
-        System.out.println("--- End session ---");
+        System.out.println("--- Конец сессии ---");
     }
 }
