@@ -8,6 +8,13 @@ public class Add extends Command {
     private static final boolean hasOperand = true;
     private CollectionManager collectionManager;
 
+    @Override
+    boolean execute() {
+
+
+
+        return true;
+    }
 
     public Add(CollectionManager collectionManager) {
         super(name, description, hasOperand);
