@@ -4,19 +4,19 @@
 .zed
 
 /Programming/src/Programming.iml
-Programming/Lab2/Lab2.iml
+Programming/lab2/Lab2.iml
 
 /Informatics/src/Informatics.iml
 /Informatics/Informatics.iml
-Informatics/src/Lab4/Lab4.iml
-Informatics/src/Lab4/src/temp
-Informatics/src/Lab4/src/a.out
-Informatics/src/Lab3/Lab3.iml
-Informatics/src/Lab4/src/lessons.yml
-Informatics/src/Lab4/src/lеssons.yaml
-Informatics/src/Lab4/src/.venv
-Informatics/src/Lab4/src/task2
-Informatics/src/Lab4/src/task1
+Informatics/src/lab4/Lab4.iml
+Informatics/src/lab4/src/temp
+Informatics/src/lab4/src/a.out
+Informatics/src/lab3/Lab3.iml
+Informatics/src/lab4/src/lessons.yml
+Informatics/src/lab4/src/lеssons.yaml
+Informatics/src/lab4/src/.venv
+Informatics/src/lab4/src/task2
+Informatics/src/lab4/src/task1
 
 /.gitignore
 .gitignore
