@@ -8,9 +8,22 @@ public abstract class Command {
     private final String description;
     private final boolean hasOperand;
 
+    /**
+     * Выполнение команды без операнда
+     * @return - статус выполнения команды
+     */
     boolean execute() {
         return false;
-    };
+    }
+
+    /**
+     * Выполнение команды с операндом
+     * @param Operand - операнд
+     * @return - статус выполнения команды
+     */
+    boolean execute(String Operand) {
+        return false;
+    }
 
     public String getDescription() {
         return description;
