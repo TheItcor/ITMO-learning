@@ -61,6 +61,7 @@ public class App {
         ComManager.addCommand("add", new Add(CollManager, userScanner));
         ComManager.addCommand("history", new History(historyManager));
         ComManager.addCommand("remove_by_id", new RemoveById(CollManager));
+        ComManager.addCommand("update_id", new UpdateId(CollManager, userScanner));
 
 
 
