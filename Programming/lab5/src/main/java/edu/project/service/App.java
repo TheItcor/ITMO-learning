@@ -45,6 +45,9 @@ public class App {
         // Управление коллекций (действия над коллекцией)
         CollectionManager CollManager = new CollectionManager(tickets);
 
+        // Сохранение истории команд, которые были введены пользователем
+        HistoryManager historyManager = new HistoryManager(5);
+
         // Пользовательский ввод
         Scanner userScanner = new Scanner(System.in);
 
@@ -56,14 +59,15 @@ public class App {
         ComManager.addCommand("info", new Info(CollManager));
         ComManager.addCommand("show", new Show(CollManager));
         ComManager.addCommand("add", new Add(CollManager, userScanner));
+        ComManager.addCommand("history", new History(historyManager));
 
 
 
         // Интерпретатор команд (пользовательский ввод -> команда)
-        Interpreter interpreter = new Interpreter();
+        Interpreter interpreter = new Interpreter(userScanner, ComManager, historyManager);
 
         while (isRunning) {
-            interpreter.interpret(userScanner, ComManager);
+            interpreter.interpret();
         }
 
         System.out.println("--- End session ---");
