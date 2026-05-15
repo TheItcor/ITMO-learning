@@ -37,5 +37,18 @@ public class CollectionManager {
         tickets.add(newTicket);
     }
 
+    public Ticket findById(String ID) {
+        for (Ticket ticket : tickets) {
+            if (ticket.getId() == Integer.parseInt(ID)) {
+                return ticket;
+            }
+        }
+
+        return null;
+    }
+
+    public void deleteTicket(Ticket ticketToDelete){
+        tickets.remove(ticketToDelete);
+    }
 
 }
