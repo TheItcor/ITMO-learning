@@ -94,4 +94,14 @@ public class Ticket {
     public Event getEvent() {
         return event;
     }
+
+    public void updateData(String name, Coordinates coordinates, Integer price,
+                           Double discount, TicketType type, Event event) {
+        this.name = name;
+        this.coordinates = coordinates;
+        this.price = price;
+        this.discount = discount;
+        this.type = type;
+        this.event = event;
+    }
 }

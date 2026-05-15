@@ -17,6 +17,7 @@ public class Add extends Command {
      * Вызывает конструктор и добавляет созданный билет в коллекцию.
      *
      */
+    @Override
     boolean execute() {
 
         System.out.println("===== Конструктор билетов =====");

@@ -18,10 +18,10 @@ public abstract class Command {
 
     /**
      * Выполнение команды с операндом
-     * @param Operand - операнд
+     * @param operand - операнд
      * @return - статус выполнения команды
      */
-    boolean execute(String Operand) {
+    boolean execute(String operand) {
         return false;
     }
 

@@ -20,4 +20,24 @@ public class Event {
         this.description = description;
         this.eventType = eventType;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMinAge() {
+        return minAge;
+    }
+
+    public Long getTicketsCount() {
+        return ticketsCount;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public EventType getEventType() {
+        return eventType;
+    }
 }
