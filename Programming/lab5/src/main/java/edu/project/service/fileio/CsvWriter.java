@@ -6,6 +6,10 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Set;
 
+
+/**
+ * Класс для записи коллекций в .csv файл.
+ */
 public class CsvWriter {
 
     /**

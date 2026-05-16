@@ -1,5 +1,9 @@
 package edu.project.service.command;
 
+
+/**
+ * Класс для команды history - вывести последние 5 команд.
+ */
 public class History extends Command{
     private final static String name = "history";
     private final static String description = "history : вывести последние 5 команд (без их аргументов)";

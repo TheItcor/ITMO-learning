@@ -1,8 +1,10 @@
 package edu.project.service.command;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 
+/**
+ * Класс для команды execute_script {filePath} - считать и исполнить последовательность команд из указанного файла.
+ */
 public class ExecuteScript extends Command{
     private final static String name = "execute_script";
     private final static String description = "execute_script file_name : считать и исполнить скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит пользователь в интерактивном режиме.";
@@ -11,9 +13,9 @@ public class ExecuteScript extends Command{
 
 
     /**
-     *
-     * @param filePath - операнд
-     * @return
+     * Метод для исполнения.
+     * Меняет режим работы интерпретатора с интерактивного на чтение и передаёт в интерпретатор путь к файлу.
+     * @param filePath - путь к файлу.
      */
     @Override
     boolean execute(String filePath) {

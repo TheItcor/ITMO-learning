@@ -7,12 +7,19 @@ import edu.project.service.collection.TicketType;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * Класс для команды filter_greater_than_type {type} - вывод элементов, значение поля type которых больше заданного.
+ * По следующей логике: USUAL > BUDGETARY > CHEAP
+ */
 public class FilterGreaterThanType extends Command{
     private final static String name = "filter_greater_than_type";
     private final static String description = "filter_greater_than_type type : вывести элементы, значение поля type которых больше заданного";
     private final static boolean hasOperand = true;
     private final CollectionManager collManager;
 
+    /**
+     * Метод для исполнения команды.
+     */
     @Override
     boolean execute(String operand) {
         // Определяем пороговый тип по вводу
@@ -37,6 +44,12 @@ public class FilterGreaterThanType extends Command{
         return true;
     }
 
+    /**
+     * Парс строки в тип билета.
+     * @param input - строка с вводом
+     * @return ticketType - тип билета с ввода.
+     * Если парсинг неверный, то выводится null.
+     */
     private TicketType parseTicketType(String input) {
         switch (input) {
             case "с": case "стан": case "стандартный": case "usual":

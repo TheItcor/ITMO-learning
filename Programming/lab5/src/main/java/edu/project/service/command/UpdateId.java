@@ -1,9 +1,12 @@
 package edu.project.service.command;
 
 import edu.project.service.collection.*;
-
 import java.util.Scanner;
 
+
+/**
+ * Класс для команды update_id {element}
+ */
 public class UpdateId extends Command{
     private final static String name = "update";
     private final static String description = "update ID {element} : обновить значение элемента коллекции, ID которого равен заданному";
@@ -13,8 +16,7 @@ public class UpdateId extends Command{
 
 
     /**
-     * Вызывает конструктор и обновляет билет в коллекции.
-     *
+     * Метод для обновления билета в коллекции по ID.
      */
     @Override
     boolean execute(String ID) {

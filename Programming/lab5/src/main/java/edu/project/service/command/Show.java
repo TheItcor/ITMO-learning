@@ -4,12 +4,18 @@ import edu.project.service.collection.Ticket;
 
 import java.util.Set;
 
+/**
+ * Класс для команды show - вывод всех элементов коллекции.
+ */
 public class Show extends Command {
     private static final String name = "show";
     private static final String description = "show : вывести в стандартный поток вывода все элементы коллекции в строковом представлении";
     private static final boolean hasOperand = false;
     private CollectionManager collectionManager;
 
+    /**
+     * Исполнение команды. Вывод элементов коллекции.
+     */
     @Override
     boolean execute() {
 

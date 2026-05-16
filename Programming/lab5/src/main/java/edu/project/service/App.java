@@ -19,19 +19,20 @@ V: 2821
 */
 
 /**
- * Main class
+ * Main-класс
  */
 public class App {
 
     public static void main(String[] args) {
         boolean isRunning = true;
 
-        //if (args.length == 0) {
-        //    System.out.println("[ERR] Требуется имя файла");
-        //    System.exit(1);
-        //}
+        if (args.length == 0) {
+            System.out.println("[ERR] Требуется имя файла");
+            System.exit(1);
+        }
 
-        String pathFile = "src/main/java/edu/project/storage/test.csv";
+        String pathFile = args[0];
+        //String pathFile = "src/main/java/edu/project/storage/test.csv";
 
         // Создаём коллекцию Ticket:
         Set<Ticket> tickets = new HashSet<>(); // <--- Коллекция!
@@ -73,7 +74,7 @@ public class App {
         ComManager.addCommand("count_less_than_event", new CountLessThanEvent(CollManager));
         ComManager.addCommand("filter_greater_than_type", new FilterGreaterThanType(CollManager));
 
-        // Интерпретатор команд (пользовательский ввод -> команда)
+        // Интерпретатор команд (пользовательский ввод -> команда -> выполнение)
         Interpreter interpreter = new Interpreter(userScanner, ComManager, historyManager);
 
         // Отдельная команда, требующая инициализации интерпретатора

@@ -3,6 +3,10 @@ package edu.project.service.command;
 import edu.project.service.collection.CollectionManager;
 import edu.project.service.collection.Ticket;
 
+
+/**
+ * Класс для команды max_by_name - вывести объект из коллекции с самым длинным полем name.
+ */
 public class MaxByName extends Command{
     private final static String name = "max_by_name";
     private final static String description = "max_by_name: вывести любой объект из коллекции, значение поля name которого является максимальным";
@@ -10,6 +14,9 @@ public class MaxByName extends Command{
     private final CollectionManager collManager;
 
 
+    /**
+     * Метод для исполнения команды.
+     */
     @Override
     boolean execute() {
         Ticket longest = null;
@@ -24,10 +31,8 @@ public class MaxByName extends Command{
         if (longest != null) {
             System.out.println("Самое длинное имя у билета id=" + longest.getId() + ": " + longest.getName());
         } else {
-            System.out.println("Коллекция пуста");
+            System.out.println("Коллекция пуста.");
         }
-
-
 
         return true;
     }

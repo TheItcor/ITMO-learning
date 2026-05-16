@@ -7,8 +7,9 @@ import edu.project.service.collection.TicketMapper;
 
 import java.util.Scanner;
 
+
 /**
- * Команда для добавляющая элемент в коллекцию если значение меньше, чем у наименьшего элемента этой коллекции
+ * Класс для команды - добавить элемент в коллекцию если значение цены <, чем у наименьшего элемента этой коллекции.
  */
 public class AddIfMin extends Command{
     private final static String name = "add_if_min";
@@ -17,6 +18,13 @@ public class AddIfMin extends Command{
     private final CollectionManager collManager;
     private final Scanner userScanner;
 
+
+    /**
+     * Метод для исполнения команды.
+     * Вызывает создатель билетов, сравнивает созданный билет с другими по цене.
+     * Если значение цены price < самого дешёвого билета коллекции, то билет попадает в коллекцию.
+     * Иначе пропадает в бездне навсегда.
+     */
     @Override
     boolean execute() {
 

@@ -3,12 +3,18 @@ package edu.project.service.command;
 import edu.project.service.collection.CollectionManager;
 import edu.project.service.collection.Ticket;
 
+/**
+ * Класс для команды remove_lower {element} - удаление из коллекции экземпляров, которые по цене меньше чем заданный.
+ */
 public class RemoveLower extends Command{
     private final static String name = "remove_lower";
     private final static String description = "remove_lower {element} : удалить из коллекции все элементы, меньшие, чем заданный";
     private final static boolean hasOperand = true;
     private final CollectionManager collManager;
 
+    /**
+     * Метод для исполнения команды
+     */
     @Override
     boolean execute(String ID) {
         Ticket oneTicket = collManager.findById(ID);

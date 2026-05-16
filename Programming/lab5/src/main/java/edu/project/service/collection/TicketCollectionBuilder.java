@@ -9,10 +9,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 
+/**
+ * Класс для создания коллекций Ticket.
+ */
 public class TicketCollectionBuilder {
 
     /**
-     * Метод для создания сет Ticket'ов по полям из .csv файла
+     * Метод для создания сета Ticket'ов по полям из .csv файла
      * @param filePath - путь к .csv файлу
      * @return tickets - HashSet из Ticket
      */

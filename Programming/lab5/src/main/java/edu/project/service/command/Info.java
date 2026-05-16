@@ -5,6 +5,10 @@ import edu.project.service.collection.Ticket;
 
 import java.util.Set;
 
+
+/**
+ * Класс для команды info - вывод информацию о коллекции.
+ */
 public class Info extends Command {
     private static final String name = "info";
     private static final String description = "info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)";
@@ -12,6 +16,9 @@ public class Info extends Command {
     private CollectionManager collectionManager;
 
 
+    /**
+     * Метод для исполнения команды
+     */
     @Override
     boolean execute() {
 

@@ -3,14 +3,15 @@ package edu.project.service.command;
 import edu.project.service.collection.CollectionManager;
 import edu.project.service.collection.Ticket;
 
-import java.util.Set;
 
+/**
+ * Класс для команды remove_by_id {ID} - удаление из коллекции по ID.
+ */
 public class RemoveById extends Command{
     private final static String name = "remove_by_id";
     private final static String description = "remove_by_id id : удалить элемент из коллекции по его id";
     private final static boolean hasOperand = true;
     private final CollectionManager collManager;
-
 
     /**
      * Находит по ID нужного билета (Ticket) и удаляет его из коллекции.

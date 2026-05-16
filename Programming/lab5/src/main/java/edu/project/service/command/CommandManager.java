@@ -3,6 +3,10 @@ package edu.project.service.command;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * Класс для работы с коллекцией команд.
+ */
 public class CommandManager {
     private final Map<String, Command> commands = new HashMap<>();
 
@@ -18,7 +22,5 @@ public class CommandManager {
     public Map<String, Command> getCommands() {
         return commands;
     }
-
-
 
 }

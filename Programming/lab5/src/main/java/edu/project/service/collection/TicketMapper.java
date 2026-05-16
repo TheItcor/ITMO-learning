@@ -1,7 +1,8 @@
 package edu.project.service.collection;
 
-import java.io.IOException;
-
+/**
+ * Класс создания билета Ticket из массива строк.
+ */
 public class TicketMapper {
     /**
      * Получаем поля массивом строк, создаём переменные для создания Ticket

@@ -5,7 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /**
- * Интерпретатор для команд.
+ * Класс-интерпретатор для запуска команд.
  */
 public class Interpreter {
     private final Scanner userScanner;
@@ -15,8 +15,9 @@ public class Interpreter {
     private String filePath;
 
     /**
-     * Интерпретация пользовательского ввода
-     * p.s. ComManager возможно стоит изменить на map<String, Command> для большей безопасности...
+     * Интерпретация пользовательского ввода. Работает в зависимости от поля interactiveMode.
+     * Если InteractiveMode = true, то идёт выполнение в интерактивном режиме.
+     * Если InteractiveMode = false, то идёт выполнение команд из файла.
      */
     public void interpret() {
         String input = "";

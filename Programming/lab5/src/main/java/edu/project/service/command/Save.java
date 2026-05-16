@@ -5,6 +5,9 @@ import edu.project.service.fileio.CsvWriter;
 
 import java.util.Set;
 
+/**
+ * Класс для команды save - сохранение коллекции в файл .csv
+ */
 public class Save extends Command {
     private final static String name = "save";
     private final static String description = "save : сохранить коллекцию в файл";
@@ -13,6 +16,9 @@ public class Save extends Command {
     private final Set<Ticket> tickets;
     private final String filePath;
 
+    /**
+     * Метод для исполнения команды
+     */
     @Override
     boolean execute() {
         try {

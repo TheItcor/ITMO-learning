@@ -4,8 +4,9 @@ import java.time.ZonedDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
-/** Класс для управления коллекцией Ticket
- *  Сюда обращаются практически все команды наследующие абстрактный класс Command, например: add.
+/**
+ * Класс для управления коллекцией Ticket
+ * Сюда обращаются практически все команды наследующие абстрактный класс Command, например: add.
  */
 public class CollectionManager {
     private Set<Ticket> tickets = new HashSet<>();

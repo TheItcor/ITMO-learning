@@ -2,8 +2,10 @@ package edu.project.service.collection;
 
 import java.util.Scanner;
 
+/**
+ * Класс для создания нового билета.
+ */
 public class TicketBuilder {
-
     private final Scanner userScanner;
 
     public TicketBuilder(Scanner userScanner) {

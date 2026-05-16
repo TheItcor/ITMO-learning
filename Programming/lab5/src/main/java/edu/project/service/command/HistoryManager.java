@@ -21,7 +21,7 @@ public class HistoryManager {
 
 
     /**
-     * добавляем команду в историю.
+     * Добавляем команду в историю.
      * @param command - добавление команды в историю
      */
     public void add(String command) {

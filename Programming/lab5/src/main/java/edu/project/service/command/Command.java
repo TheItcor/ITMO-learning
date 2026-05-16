@@ -3,7 +3,7 @@ package edu.project.service.command;
 import java.io.IOException;
 
 /**
- * Абстрактный класс для создания комманд.
+ * Абстрактный класс для создания всех команд.
  */
 public abstract class Command {
     private final String name;
@@ -11,16 +11,16 @@ public abstract class Command {
     private final boolean hasOperand;
 
     /**
-     * Выполнение команды без операнда
-     * @return - статус выполнения команды
+     * Выполнение команды без операнда.
+     * @return - статус выполнения команды.
      */
     boolean execute(){
         return false;
     }
 
     /**
-     * Выполнение команды с операндом
-     * @param operand - операнд
+     * Выполнение команды с операндом.
+     * @param operand - операнд (аргумент).
      * @return - статус выполнения команды
      */
     boolean execute(String operand) {
