@@ -5,6 +5,7 @@ import edu.project.service.collection.CollectionManager;
 import edu.project.service.collection.Ticket;
 import edu.project.service.collection.TicketCollectionBuilder;
 import edu.project.service.command.*;
+import edu.project.service.fileio.CsvWriter;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -42,6 +43,9 @@ public class App {
             System.exit(1);
         }
 
+        // Запись в .csv-файл
+        CsvWriter writer = new CsvWriter();
+
         // Управление коллекций (действия над коллекцией)
         CollectionManager CollManager = new CollectionManager(tickets);
 
@@ -63,6 +67,7 @@ public class App {
         ComManager.addCommand("remove_by_id", new RemoveById(CollManager));
         ComManager.addCommand("update_id", new UpdateId(CollManager, userScanner));
         ComManager.addCommand("max_by_name", new MaxByName(CollManager));
+        ComManager.addCommand("save", new Save(writer, tickets, pathFile));
 
         // Интерпретатор команд (пользовательский ввод -> команда)
         Interpreter interpreter = new Interpreter(userScanner, ComManager, historyManager);

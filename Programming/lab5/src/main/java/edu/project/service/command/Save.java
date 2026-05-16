@@ -1,11 +1,31 @@
 package edu.project.service.command;
 
-public class Save extends Command {
-    private final String name = "save";
-    private final String description = "save : сохранить коллекцию в файл";
-    private final boolean hasOperand = false;
+import edu.project.service.collection.Ticket;
+import edu.project.service.fileio.CsvWriter;
 
-    public Save(String name, String description, boolean hasOperand) {
+import java.io.IOException;
+import java.util.Set;
+
+public class Save extends Command {
+    private final static String name = "save";
+    private final static String description = "save : сохранить коллекцию в файл";
+    private final static boolean hasOperand = false;
+    private final CsvWriter writer;
+    private final Set<Ticket> tickets;
+    private final String filePath;
+
+    @Override
+    boolean execute() throws IOException {
+        writer.writeTickets(tickets, filePath);
+
+        System.out.println("Успешная запись в файл.");
+        return true;
+    }
+
+    public Save(CsvWriter writer, Set<Ticket> tickets, String filePath) {
         super(name, description, hasOperand);
+        this.writer = writer;
+        this.filePath = filePath;
+        this.tickets = tickets;
     }
 }
