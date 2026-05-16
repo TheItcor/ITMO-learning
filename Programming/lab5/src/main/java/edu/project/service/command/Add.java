@@ -77,6 +77,7 @@ public class Add extends Command {
 
         System.out.println("Введите количество билетов для мероприятия: ");
         Long ticketCount = userScanner.nextLong();
+        userScanner.nextLine();   // очистка буфера
 
         System.out.println("Введите описание для мероприятия: ");
         String eventDescription = userScanner.nextLine();
