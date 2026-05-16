@@ -85,20 +85,29 @@ public class UpdateId extends Command{
                 discount = ticket.getDiscount();
             }
         }
-
-        System.out.print("Введите тип билета (стандарт, бюджетный, дешёвый): ");
-        String typeInput = readLine().toLowerCase();
         TicketType type;
+        System.out.println("Введите тип билета (USUAL, BUDGETARY, CHEAP): ");
+        String typeInput = userScanner.nextLine().trim().toLowerCase();
         if (typeInput.isEmpty()) {
             type = ticket.getType();
         } else {
             switch (typeInput) {
-                case "с": case "стан": case "стандартный": type = TicketType.USUAL; break;
-                case "б": case "бюд": case "бюджетный": type = TicketType.BUDGETARY; break;
-                case "д": case "деш": case "дешёвый": type = TicketType.CHEAP; break;
+                case "u":
+                case "usual":
+                    type = TicketType.USUAL;
+                    break;
+                case "b":
+                case "budgetary":
+                    type = TicketType.BUDGETARY;
+                    break;
+                case "c":
+                case "cheap":
+                    type = TicketType.CHEAP;
+                    break;
                 default:
-                    System.out.println("[ERR] Неизвестный тип, оставлен старый.");
-                    type = ticket.getType();
+                    System.out.println("Неверный тип, установлен тип USUAL");
+                    type = TicketType.USUAL;
+                    break;
             }
         }
 
@@ -136,19 +145,30 @@ public class UpdateId extends Command{
         String eventDescription = readLine();
         if (eventDescription.isEmpty()) eventDescription = oldEvent.getDescription();
 
-        System.out.print("Введите тип мероприятия (концерт/киберспорт/футбол): ");
-        String eventTypeInput = readLine().toLowerCase();
+
         EventType eventType;
+        System.out.println("Введите тип мероприятия (CONCERT, E_SPORTS, FOOTBALL): ");
+        String eventTypeInput = userScanner.nextLine().trim();
         if (eventTypeInput.isEmpty()) {
             eventType = oldEvent.getEventType();
         } else {
             switch (eventTypeInput) {
-                case "ко": case "кон": case "концерт": eventType = EventType.CONCERT; break;
-                case "ки": case "кибер": case "киберспорт": eventType = EventType.E_SPORTS; break;
-                case "ф": case "фут": case "футбол": eventType = EventType.FOOTBALL; break;
+                case "c":
+                case "concert":
+                    eventType = EventType.CONCERT;
+                    break;
+                case "e":
+                case "e_sports":
+                    eventType = EventType.E_SPORTS;
+                    break;
+                case "f":
+                case "football":
+                    eventType = EventType.FOOTBALL;
+                    break;
                 default:
-                    System.out.println("Неизвестный тип, оставлен старый.");
-                    eventType = oldEvent.getEventType();
+                    System.out.println("Неверный тип, установлен тип CONCERT");
+                    eventType = EventType.CONCERT;
+                    break;
             }
         }
 

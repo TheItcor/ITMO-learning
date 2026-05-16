@@ -63,26 +63,23 @@ public class TicketBuilder {
         userScanner.nextLine(); // очистка буфера
 
         TicketType type;
-        System.out.println("Введите тип билета (стандарт, бюджетный, дешёвый): ");
-        String typeInput = userScanner.nextLine().trim();
+        System.out.println("Введите тип билета (USUAL, BUDGETARY, CHEAP): ");
+        String typeInput = userScanner.nextLine().trim().toLowerCase();
         switch (typeInput) {
-            case "с":
-            case "стан":
-            case "стандартный":
+            case "u":
+            case "usual":
                 type = TicketType.USUAL;
                 break;
-            case "б":
-            case "бюд":
-            case "бюджетный":
+            case "b":
+            case "budgetary":
                 type = TicketType.BUDGETARY;
                 break;
-            case "д":
-            case "деш":
-            case "дешёвый":
+            case "c":
+            case "cheap":
                 type = TicketType.CHEAP;
                 break;
             default:
-                System.out.println("Неверный тип, установлен тип Стандартный");
+                System.out.println("Неверный тип, установлен тип USUAL");
                 type = TicketType.USUAL;
                 break;
         }
@@ -111,26 +108,23 @@ public class TicketBuilder {
         String eventDescription = userScanner.nextLine();
 
         EventType eventType;
-        System.out.println("Введите тип мероприятия (концерт, киберспорт, футбол): ");
+        System.out.println("Введите тип мероприятия (CONCERT, E_SPORTS, FOOTBALL): ");
         String eventTypeInput = userScanner.nextLine().trim();
         switch (eventTypeInput) {
-            case "ко":
-            case "кон":
-            case "концерт":
+            case "c":
+            case "concert":
                 eventType = EventType.CONCERT;
                 break;
-            case "ки":
-            case "кибер":
-            case "киберспорт":
+            case "e":
+            case "e_sports":
                 eventType = EventType.E_SPORTS;
                 break;
-            case "ф":
-            case "фут":
-            case "футбол":
+            case "f":
+            case "football":
                 eventType = EventType.FOOTBALL;
                 break;
             default:
-                System.out.println("Неверный тип, установлен тип Концерт");
+                System.out.println("Неверный тип, установлен тип CONCERT");
                 eventType = EventType.CONCERT;
                 break;
         }
