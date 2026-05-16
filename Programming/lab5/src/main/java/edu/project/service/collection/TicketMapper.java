@@ -9,7 +9,7 @@ public class TicketMapper {
      * @param record - массив из полей с .csv файла
      * @return Ticket - возвращает новый Ticket
      */
-    public static Ticket fromCsvRecord(String[] record) {
+    public static Ticket fromRecord(String[] record) {
         String name = record[0].trim();
         int coordX = Integer.parseInt(record[1].trim());
         float coordY = Float.parseFloat(record[2].trim());

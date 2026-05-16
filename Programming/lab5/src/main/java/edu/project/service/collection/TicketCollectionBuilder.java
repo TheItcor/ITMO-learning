@@ -23,7 +23,7 @@ public class TicketCollectionBuilder {
 
         // Проходимся по файлу, парсим, создаём Ticket, засовываем в HashSet
         for (String[] record : new CsvParser().readCsvFile(filePath)) {
-            tickets.add(TicketMapper.fromCsvRecord(record));
+            tickets.add(TicketMapper.fromRecord(record));
         }
         return tickets;
     }
