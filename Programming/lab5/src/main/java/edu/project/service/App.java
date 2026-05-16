@@ -64,10 +64,12 @@ public class App {
         ComManager.addCommand("update_id", new UpdateId(CollManager, userScanner));
         ComManager.addCommand("max_by_name", new MaxByName(CollManager));
 
-
-
         // Интерпретатор команд (пользовательский ввод -> команда)
         Interpreter interpreter = new Interpreter(userScanner, ComManager, historyManager);
+
+        // Отдельная команда, требующая инициализации интерпретатора
+        ComManager.addCommand("execute_script", new ExecuteScript(interpreter));
+
 
         while (isRunning) {
             interpreter.interpret();
