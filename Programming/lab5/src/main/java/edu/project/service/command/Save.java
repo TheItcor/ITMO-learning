@@ -3,7 +3,6 @@ package edu.project.service.command;
 import edu.project.service.collection.Ticket;
 import edu.project.service.fileio.CsvWriter;
 
-import java.io.IOException;
 import java.util.Set;
 
 public class Save extends Command {
