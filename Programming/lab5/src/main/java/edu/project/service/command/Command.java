@@ -1,5 +1,7 @@
 package edu.project.service.command;
 
+import java.io.IOException;
+
 /**
  * Абстрактный класс для создания комманд.
  */
@@ -12,7 +14,7 @@ public abstract class Command {
      * Выполнение команды без операнда
      * @return - статус выполнения команды
      */
-    boolean execute() {
+    boolean execute(){
         return false;
     }
 

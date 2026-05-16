@@ -11,4 +11,17 @@ public class Coordinates {
         this.x = x;
         this.y = y;
     }
+
+    public Integer getX() {
+        return x;
+    }
+
+    public Float getY() {
+        return y;
+    }
+
+    @Override
+    public String toString() {
+        return "x: " + x + " y: " + y;
+    }
 }

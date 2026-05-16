@@ -40,4 +40,13 @@ public class Event {
     public EventType getEventType() {
         return eventType;
     }
+
+    @Override
+    public String toString() {
+        return
+                "\n    Минимальный Возраст: " + minAge +
+                "\n    Кол-во билетов: " + ticketsCount +
+                "\n    Описание: " + description +
+                "\n    Тип: " + eventType;
+    }
 }
