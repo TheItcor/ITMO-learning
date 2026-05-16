@@ -1,5 +1,7 @@
 package edu.project.service.command;
 
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /**
@@ -9,20 +11,45 @@ public class Interpreter {
     private final Scanner userScanner;
     private final CommandManager comManager;
     private final HistoryManager historyManager;
+    private boolean interactiveMode = true;
+    private String filePath;
 
     /**
      * Интерпретация пользовательского ввода
      * p.s. ComManager возможно стоит изменить на map<String, Command> для большей безопасности...
      */
     public void interpret() {
-        String input = userScanner.nextLine();
+        String input = "";
 
+        // Режим чтения из файла / режим интерпретации из ввода пользователя
+        if (interactiveMode) {
+            input = userScanner.nextLine();
+            executeCommand(input);
+        } else {
+            try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(filePath));
+                 InputStreamReader isr = new InputStreamReader(bis, StandardCharsets.UTF_8);
+                 BufferedReader br = new BufferedReader(isr)) {
+
+                String line;
+                while ((line = br.readLine()) != null) {
+
+                    executeCommand(line);
+                }
+
+            } catch (IOException e) {
+                System.err.println("[ERR] Ошибка чтения: " + e.getMessage());
+            }
+
+            switchMode(); // возвращаемся в интерактивный режим
+        }
+    }
+
+    public void executeCommand(String input) {
         // Разбиваем строку, введенную пользователем на "Команда Аргумент1 Аргумент2"
         String[] userInputSplit = input.trim().toLowerCase().split("\\s+");
 
         // Получаем команду из менеджера команд по ключу userInputSplit[0]
         Command cmd = comManager.getCommands().get(userInputSplit[0]);
-
 
 
         // Добавляем команду в историю команд, если команда "history", то не добавляем её ибо зачем
@@ -45,9 +72,28 @@ public class Interpreter {
         }
     }
 
+
     public Interpreter(Scanner userScanner, CommandManager comManager, HistoryManager historyManager) {
         this.userScanner = userScanner;
         this.comManager = comManager;
         this.historyManager = historyManager;
+    }
+
+
+    /**
+     * Сменить режим интерпретатора.
+     * Интерактивный режим -> Режим чтения
+     * Режим чтения -> Интерактивный режим
+     */
+    public void switchMode() {
+        interactiveMode = !interactiveMode;
+    }
+
+    /**
+     * Сменить путь к папке для режима интерпретирования из файла.
+     * @param newFilePath - новый путь к файлу для интерпретатора
+     */
+    public void changeFilePath(String newFilePath) {
+        filePath = newFilePath;
     }
 }
