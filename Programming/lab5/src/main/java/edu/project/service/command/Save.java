@@ -15,8 +15,13 @@ public class Save extends Command {
     private final String filePath;
 
     @Override
-    boolean execute() throws IOException {
-        writer.writeTickets(tickets, filePath);
+    boolean execute() {
+        try {
+            writer.writeTickets(tickets, filePath);
+        } catch (Exception e) {
+            System.out.println("Ошибка при записи в файл.");
+            return false;
+        }
 
         System.out.println("Успешная запись в файл.");
         return true;
