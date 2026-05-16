@@ -70,6 +70,8 @@ public class App {
         ComManager.addCommand("save", new Save(writer, tickets, pathFile));
         ComManager.addCommand("add_if_min", new AddIfMin(CollManager, userScanner));
         ComManager.addCommand("remove_lower", new RemoveLower(CollManager));
+        ComManager.addCommand("count_less_than_event", new CountLessThanEvent(CollManager));
+        ComManager.addCommand("filter_greater_than_type", new FilterGreaterThanType(CollManager));
 
         // Интерпретатор команд (пользовательский ввод -> команда)
         Interpreter interpreter = new Interpreter(userScanner, ComManager, historyManager);
