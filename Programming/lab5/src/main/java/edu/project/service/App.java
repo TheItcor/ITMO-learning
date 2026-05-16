@@ -79,7 +79,7 @@ public class App {
         // Отдельная команда, требующая инициализации интерпретатора
         ComManager.addCommand("execute_script", new ExecuteScript(interpreter));
 
-
+        // Интерпретирование
         while (isRunning) {
             interpreter.interpret();
         }
