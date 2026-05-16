@@ -47,6 +47,17 @@ public class CollectionManager {
         return null;
     }
 
+    public int findTheMostCheapest() {
+        int min = Integer.MAX_VALUE;
+
+        for (Ticket t : tickets) {
+            if (t.getPrice() < min) {
+                min = t.getPrice();
+            }
+        }
+        return min;
+    }
+
     public void deleteTicket(Ticket ticketToDelete){
         tickets.remove(ticketToDelete);
     }

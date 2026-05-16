@@ -68,6 +68,7 @@ public class App {
         ComManager.addCommand("update_id", new UpdateId(CollManager, userScanner));
         ComManager.addCommand("max_by_name", new MaxByName(CollManager));
         ComManager.addCommand("save", new Save(writer, tickets, pathFile));
+        ComManager.addCommand("add_if_min", new AddIfMin(CollManager, userScanner));
 
         // Интерпретатор команд (пользовательский ввод -> команда)
         Interpreter interpreter = new Interpreter(userScanner, ComManager, historyManager);
