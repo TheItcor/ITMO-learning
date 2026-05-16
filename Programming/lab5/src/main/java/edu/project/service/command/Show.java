@@ -23,8 +23,8 @@ public class Show extends Command {
             System.out.println("  Цена: " + t.getPrice() + " Руб.");
             System.out.println("  Скидка: " + t.getDiscount() + "%");
             System.out.println("  Тип: " + (t.getType() != null ? t.getType() : "null (optional)"));
-            System.out.println("  Ивент: " + t.getEvent());
-            System.out.println("-----");
+            System.out.println("  Мероприятие: " + t.getEvent());
+            System.out.println("----------------------------------------");
         }
 
 
