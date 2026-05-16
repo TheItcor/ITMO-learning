@@ -1,4 +1,6 @@
-"OctoberFest", 54, 51.2, 150, 10, CHEAP, 18, 200, CONCERT, "Piwo!"
-"Epstein Island Party", 120, 6.1, 2000, 3, USUAL, 3, 20, CONCERT, "America moment"
-"Pdiddy Party", 90, 5.1, 3000, 5, USUAL, 1, 50, CONCERT, "America moment 2"
-"Football Zenit", 24, 9.1, 500, 5, BUDGETARY, 16, 1200, FOOTBALL, "Football 2026"
+OctoberFest,54,51.2,150,10.0,CHEAP,18,200,CONCERT,Piwo!
+Epstein Island Party,120,6.1,2000,3.0,USUAL,3,20,CONCERT,America moment
+Pdiddy Party,90,5.1,3000,5.0,USUAL,1,50,CONCERT,America moment 2
+Football Zenit,24,9.1,500,5.0,BUDGETARY,16,1200,FOOTBALL,Football 2026
+Концерт Sabaton,32,33.0,1800,10.0,USUAL,18,2400,CONCERT,eeee rock
+Концерт C418,25,120.0,1200,5.0,BUDGETARY,16,520,CONCERT,Мьюзик (классный)
