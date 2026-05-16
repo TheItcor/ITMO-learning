@@ -62,4 +62,8 @@ public class CollectionManager {
         tickets.remove(ticketToDelete);
     }
 
+    public void retainById(int id) {
+        tickets.removeIf(ticket -> ticket.getId() != id);
+    }
+
 }
